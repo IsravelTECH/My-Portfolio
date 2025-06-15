@@ -86,7 +86,7 @@
           </div>
           <div class="featured-image">
             <div class="image">
-                <img src="images/myimage.jpg" alt="avatar">
+                <img src="images/Pic3.jpg" alt="avatar">
             </div>
           </div>
           <div class="scroll-icon-box">
@@ -222,16 +222,27 @@
   <div class="modal-content">
     <span class="close-btn">&times;</span>
     <h2>My Certificates</h2>
+    
+    <!-- Big Preview Section -->
+    <div class="cert-preview">
+      <button id="prevBtn">&#10094;</button>
+      <img id="previewImg" src="images/Project.jpg" alt="Certificate Preview">
+      <button id="nextBtn">&#10095;</button>
+    </div>
+
+    <!-- Thumbnails -->
     <div class="certificates-list">
-      <img src="images/Python.png" alt="Certificate 1">
-      <img src="images/Course.jpg" alt="Certificate 2">
-      <img src="images/Internship.jpg" alt="Certificate 3">
-      <img src="images/Project.jpg" alt="Certificate 4">
-      <img src="images/Pic1.jpg" alt="Certificate 5">
-      <!-- Add more certificate images as needed -->
+      <img class="cert-thumb" src="images/Python.png" alt="Certificate 1">
+      <img class="cert-thumb" src="images/Course.jpg" alt="Certificate 2">
+      <img class="cert-thumb" src="images/Internship.jpg" alt="Certificate 3">
+      <img class="cert-thumb" src="images/Project.jpg" alt="Certificate 4">
+      <img class="cert-thumb" src="images/Pic1.jpg" alt="Certificate 5">
+      <img class="cert-thumb" src="images/SEO.png" alt="Certificate 6">
     </div>
   </div>
 </div>
+
+
 
     <!-- --------------- FOOTER --------------- -->
     <footer>
@@ -307,6 +318,56 @@
         showToast("❌ Failed to send: " + error.text, false);
       });
   });
+
+  const modal = document.getElementById("certModal");
+  const closeBtn = document.querySelector(".close-btn");
+  const previewImg = document.getElementById("previewImg");
+  const thumbs = document.querySelectorAll(".cert-thumb");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentIndex = 3; // Default index for preview (Project.jpg)
+
+  const imageSources = Array.from(thumbs).map(img => img.src);
+
+  function showModal() {
+    modal.style.display = "block";
+    updatePreview(currentIndex);
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  function updatePreview(index) {
+    previewImg.src = imageSources[index];
+    thumbs.forEach((thumb, i) => {
+      thumb.classList.toggle('active', i === index);
+    });
+  }
+
+  // Button Events
+  prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+    updatePreview(currentIndex);
+  };
+
+  nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % imageSources.length;
+    updatePreview(currentIndex);
+  };
+
+  closeBtn.onclick = closeModal;
+
+  // Thumbnail Click Event
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => {
+      currentIndex = i;
+      updatePreview(currentIndex);
+    });
+  });
+
+ 
 </script>
 
 </body>
