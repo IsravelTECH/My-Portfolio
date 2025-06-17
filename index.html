@@ -159,28 +159,61 @@
 
        <!-- -------------- PROJECT BOX ---------------- -->
 
-       <section class="section" id="projects">
-          <div class="top-header">
-              <h1>Projects</h1>
-          </div>
-          <div class="project-container">
-            <div class="project-box">
-                <i class="uil uil-briefcase-alt"></i>
-                <h3>Completed</h3>
-                <label>10+ Finished Projects</label>
-            </div>
-            <div class="project-box">
-               <i class="uil uil-medal"></i>  <!-- Certificate icon -->
-               <h3>Certificates</h3>
-               <label>10+ Professional Certificates</label>
-            </div>
-            <div class="project-box">
-                <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label>3+ Years in the field</label>
-            </div>
-          </div>
-       </section>
+<section class="section" id="projects">
+  <div class="top-header">
+      <h1>Projects</h1>
+  </div>
+  <div class="project-container">
+    <div class="project-box completed-box">
+        <i class="uil uil-briefcase-alt"></i>
+        <h3>Completed</h3>
+        <label>10+ Finished Projects</label>
+    </div>
+    <div class="project-box cert-box">
+       <i class="uil uil-medal"></i>
+       <h3>Certificates</h3>
+       <label>10+ Professional Certificates</label>
+    </div>
+    <div class="project-box">
+        <i class="uil uil-award"></i>
+        <h3>Experience</h3>
+        <label>3+ Years in the field</label>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Modal remains same -->
+<div id="certModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>My Certificates</h2>
+    <div class="cert-preview">
+  <button id="prevBtn">&#10094;</button>
+  <img id="previewImg" src="images/Project.jpg" alt="Certificate Preview">
+  <button id="nextBtn">&#10095;</button>
+</div>
+  </div>
+</div>
+
+<!-- Completed Projects Modal -->
+<div id="completedModal" class="modal">
+  <div class="modal-content">
+    <span class="close-completed-btn">&times;</span>
+    <h2>Completed Projects</h2>
+
+    <div class="completed-preview">
+      <button id="completedPrevBtn">&#10094;</button>
+
+       <div class="completed-details" style="cursor: pointer;">
+        <img id="completedImg" src="images/Buybuddy.png" alt="Project Preview">
+        <h3 id="completedTitle">BuyBuddy</h3>
+        <p id="completedDesc">Multi-vendor shopping platform with multiple seller profiles.</p>
+      </div>
+
+      <button id="completedNextBtn">&#10095;</button>
+    </div>
+  </div>
+</div>
 
        <!-- -------------- CONTACT BOX ---------------- -->
 
@@ -218,31 +251,6 @@
   </div>
 </section>
     </main>
-
-<!-- CERTIFICATES MODAL -->
-<div id="certModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>My Certificates</h2>
-    
-    <!-- Big Preview Section -->
-    <div class="cert-preview">
-      <button id="prevBtn">&#10094;</button>
-      <img id="previewImg" src="images/Project.jpg" alt="Certificate Preview">
-      <button id="nextBtn">&#10095;</button>
-    </div>
-
-    <!-- Thumbnails -->
-    <div class="certificates-list">
-      <img class="cert-thumb" src="images/Python.png" alt="Certificate 1">
-      <img class="cert-thumb" src="images/Course.jpg" alt="Certificate 2">
-      <img class="cert-thumb" src="images/Internship.jpg" alt="Certificate 3">
-      <img class="cert-thumb" src="images/Project.jpg" alt="Certificate 4">
-      <img class="cert-thumb" src="images/Pic1.jpg" alt="Certificate 5">
-      <img class="cert-thumb" src="images/SEO.png" alt="Certificate 6">
-    </div>
-  </div>
-</div>
 
 
 
@@ -293,23 +301,25 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script>
-  (function() {
+  // === Initialize EmailJS ===
+  (function () {
     emailjs.init("Xme14b3NE9dsk36kv");
   })();
 
+  // === Toast Function for Contact Form ===
   function showToast(message, isSuccess = true) {
     const toast = document.getElementById("toast");
     toast.innerText = message;
     toast.style.backgroundColor = isSuccess ? "#28a745" : "#dc3545";
     toast.classList.add("show-toast");
 
-    // Auto-hide after 3 seconds
     setTimeout(() => {
       toast.classList.remove("show-toast");
     }, 3000);
   }
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
+  // === Contact Form Submission ===
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     emailjs.sendForm("service_8tktt3e", "template_73a0akg", this)
@@ -321,56 +331,133 @@
       });
   });
 
-  const modal = document.getElementById("certModal");
-  const closeBtn = document.querySelector(".close-btn");
-  const previewImg = document.getElementById("previewImg");
-  const thumbs = document.querySelectorAll(".cert-thumb");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
+  // === Main Modal Logic ===
+  document.addEventListener('DOMContentLoaded', () => {
 
-  let currentIndex = 3; // Default index for preview (Project.jpg)
+    // === CERTIFICATES MODAL ===
+    const certBox = document.querySelector(".cert-box");
+    const certModal = document.getElementById("certModal");
+    const closeBtn = document.querySelector(".close-btn");
+    const previewImg = document.getElementById("previewImg");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
 
-  const imageSources = Array.from(thumbs).map(img => img.src);
+    const imageSources = [
+      "images/Project.jpg",
+      "images/Internship.jpg",
+      "images/Hackaton.jpg",
+      "images/Python.png",
+      "images/Course.jpg",
+      "images/SEO.png"
+    ];
 
-  function showModal() {
-    modal.style.display = "block";
-    updatePreview(currentIndex);
-  }
+    let currentIndex = 0;
 
-  function closeModal() {
-    modal.style.display = "none";
-  }
-
-  function updatePreview(index) {
-    previewImg.src = imageSources[index];
-    thumbs.forEach((thumb, i) => {
-      thumb.classList.toggle('active', i === index);
-    });
-  }
-
-  // Button Events
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
-    updatePreview(currentIndex);
-  };
-
-  nextBtn.onclick = () => {
-    currentIndex = (currentIndex + 1) % imageSources.length;
-    updatePreview(currentIndex);
-  };
-
-  closeBtn.onclick = closeModal;
-
-  // Thumbnail Click Event
-  thumbs.forEach((thumb, i) => {
-    thumb.addEventListener("click", () => {
-      currentIndex = i;
+    certBox.addEventListener("click", () => {
+      certModal.style.display = "block";
       updatePreview(currentIndex);
     });
+
+    closeBtn.onclick = () => certModal.style.display = "none";
+
+    window.onclick = e => {
+      if (e.target == certModal) {
+        certModal.style.display = "none";
+      }
+    };
+
+    function updatePreview(index) {
+      previewImg.src = imageSources[index];
+    }
+
+    prevBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+      updatePreview(currentIndex);
+    };
+
+    nextBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % imageSources.length;
+      updatePreview(currentIndex);
+    };
+
+    // === COMPLETED PROJECTS MODAL ===
+  const completedBox = document.querySelector(".completed-box");
+  const completedModal = document.getElementById("completedModal");
+  const closeCompletedBtn = document.querySelector(".close-completed-btn");
+
+  const completedImg = document.getElementById("completedImg");
+  const completedTitle = document.getElementById("completedTitle");
+  const completedDesc = document.getElementById("completedDesc");
+  const completedPrevBtn = document.getElementById("completedPrevBtn");
+  const completedNextBtn = document.getElementById("completedNextBtn");
+
+  const completedDetails = document.querySelector(".completed-details");
+
+const projects = [
+    {
+      img: "images/Buybuddy.png",
+      title: "BuyBuddy",
+      desc: "Multi-vendor shopping platform with multiple seller profiles.",
+      link: "https://e-commerce-store-anqa.onrender.com/"
+    },
+    {
+      img: "images/Portfolio.png",
+      title: "Portfolio",
+      desc: "Responsive personal portfolio showcasing skills & projects.",
+      link: "https://israveltech.github.io/My-Portfolio/"
+    },
+    {
+      img: "images/Shoehaven.png",
+      title: "ShoeHaven",
+      desc: "E-commerce platform for shoe store with secure checkout.",
+      link: "https://israveltech.github.io/Ecommerce-Website/"
+    },
+    {
+      img: "images/Foodie express.png",
+      title: "FoodieExpress",
+      desc: "Online food delivery app with real-time order tracking.",
+      link: "https://israveltech.github.io/Food-Delivery-System/"
+    }
+  ];
+
+  let projectIndex = 0;
+
+  function updateCompletedView(index) {
+    const p = projects[index];
+    completedImg.src = p.img;
+    completedTitle.innerText = p.title;
+    completedDesc.innerText = p.desc;
+    completedDetails.onclick = () => {
+      window.open(p.link, '_blank');
+    };
+  }
+
+  completedBox.addEventListener("click", () => {
+    completedModal.style.display = "block";
+    updateCompletedView(projectIndex);
   });
 
- 
+  closeCompletedBtn.onclick = () => completedModal.style.display = "none";
+
+  window.onclick = e => {
+    if (e.target === completedModal) {
+      completedModal.style.display = "none";
+    }
+  };
+
+  completedPrevBtn.onclick = () => {
+    projectIndex = (projectIndex - 1 + projects.length) % projects.length;
+    updateCompletedView(projectIndex);
+  };
+
+  completedNextBtn.onclick = () => {
+    projectIndex = (projectIndex + 1) % projects.length;
+    updateCompletedView(projectIndex);
+  };
+});
+
 </script>
+
 
 </body>
 </html>

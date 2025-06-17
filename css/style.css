@@ -750,27 +750,19 @@ footer{
 #prevBtn { left: 0; }
 #nextBtn { right: 0; }
 
-/* Thumbnail List */
-.certificates-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+#certModal .modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.cert-thumb {
-  width: 100px;
-  height: 70px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  transition: transform 0.2s, border-color 0.2s;
-}
-.cert-thumb:hover, .cert-thumb.active {
-  border-color: #3498db;
-  transform: scale(1.05);
-}
+
 
 .featured-text-btn {
   display: flex;
@@ -816,4 +808,102 @@ footer{
 .btn-link:hover {
   text-decoration: none;
   color: inherit;
+}
+
+.close-completed-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* OPTIONAL HOVER STYLES */
+.project-box.cert-box:hover,
+.project-box.completed-box:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+#completedModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#completedModal .modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.close-completed-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.completed-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.completed-details {
+  max-width: 600px;
+  text-align: center;
+}
+
+#completedImg {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#completedTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#completedDesc {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+#completedPrevBtn, #completedNextBtn {
+  font-size: 40px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#completedPrevBtn:hover, #completedNextBtn:hover {
+  background: #eee;
 }
