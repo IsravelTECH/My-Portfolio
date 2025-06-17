@@ -771,3 +771,49 @@ footer{
   border-color: #3498db;
   transform: scale(1.05);
 }
+
+.featured-text-btn {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.blue-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.blue-btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
