@@ -44,11 +44,39 @@
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn"><a href="https://drive.google.com/file/d/18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ/view?usp=sharing" target="_blank" class="btn-link">
+            <button class="btn"><a href="https://drive.google.com/uc?export=download&id=18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ
+" target="_blank" class="btn-link">
   Download CV <i class="uil uil-file-alt"></i>
 </a>
 </button>
         </div>
+      
+<!-- Dark Mode Toggle -->
+<div id="darkModeToggle" class="theme-toggle" style="cursor: pointer;">
+  <!-- Moon Icon (for light mode) -->
+  <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="feather feather-moon">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+  </svg>
+  
+  <!-- Sun Icon (for dark mode) -->
+  <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="feather feather-sun" style="display: none;">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+</div>
+
+
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
@@ -74,7 +102,8 @@
            <div class="featured-text-btn">
   <button class="btn blue-btn">Hire Me</button>
   <button class="btn">
-    <a href="https://drive.google.com/file/d/18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ/view?usp=sharing" target="_blank" class="btn-link">
+    <a href="https://drive.google.com/uc?export=download&id=18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ
+" target="_blank" class="btn-link">
       Download CV <i class="uil uil-file-alt"></i>
     </a>
   </button>
@@ -111,7 +140,8 @@
                     <p>I am well-versed in HTML, CSS and JavaScript , and other cutting edge
                        frameworks and libraries,which allows me to implement interactive features.                    </p>
                     <div class="about-btn">
-                        <button class="btn"><a href="https://drive.google.com/file/d/18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ/view?usp=sharing" target="_blank" class="btn-link">
+                        <button class="btn"><a href="https://drive.google.com/uc?export=download&id=18hZ5rLAbMIxAijkzvLRpaT2sPmV-E5CQ
+" target="_blank" class="btn-link">
   Download CV <i class="uil uil-file-alt"></i>
 </a>
 </button>
@@ -455,6 +485,29 @@ const projects = [
     updateCompletedView(projectIndex);
   };
 });
+
+// === DARK MODE TOGGLE WITH ICON SWITCH ===
+const darkToggle = document.getElementById("darkModeToggle");
+const moonIcon = document.getElementById("moonIcon");
+const sunIcon = document.getElementById("sunIcon");
+
+// Load preference from localStorage
+if (localStorage.getItem("dark-mode") === "true") {
+  document.body.classList.add("dark-mode");
+  moonIcon.style.display = "none";
+  sunIcon.style.display = "inline";
+}
+
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  const isDark = document.body.classList.contains("dark-mode");
+  moonIcon.style.display = isDark ? "none" : "inline";
+  sunIcon.style.display = isDark ? "inline" : "none";
+
+  localStorage.setItem("dark-mode", isDark);
+});
+
 
 </script>
 
