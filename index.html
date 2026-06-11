@@ -44,38 +44,20 @@
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn"><a href="https://drive.google.com/uc?export=download&id=1LqkS2BUdTdAh34ln99R0S_EBpfvAKD3U
-" target="_blank" class="btn-link">
-  Download CV <i class="uil uil-file-alt"></i>
-</a>
+            <button class="btn">
+  <a href="https://drive.google.com/uc?export=download&id=1SS3Lxyg5FzJHbGM7NcoPIly5XM5Ux_eK" target="_blank" class="btn-link">
+    Download CV <i class="uil uil-file-alt"></i>
+  </a>
 </button>
         </div>
       
 <!-- Dark Mode Toggle -->
-<div id="darkModeToggle" class="theme-toggle" style="cursor: pointer;">
-  <!-- Moon Icon (for light mode) -->
-  <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="feather feather-moon">
-    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-  </svg>
-  
-  <!-- Sun Icon (for dark mode) -->
-  <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="feather feather-sun" style="display: none;">
-    <circle cx="12" cy="12" r="5"></circle>
-    <line x1="12" y1="1" x2="12" y2="3"></line>
-    <line x1="12" y1="21" x2="12" y2="23"></line>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-    <line x1="1" y1="12" x2="3" y2="12"></line>
-    <line x1="21" y1="12" x2="23" y2="12"></line>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-  </svg>
+<div id="darkModeToggle" class="theme-switch">
+  <div class="switch-slider">
+    <i class="uil uil-sun"></i>
+    <i class="uil uil-moon"></i>
+  </div>
 </div>
-
 
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
@@ -102,11 +84,10 @@
            <div class="featured-text-btn">
   <button class="btn blue-btn">Hire Me</button>
   <button class="btn">
-    <a href="https://drive.google.com/uc?export=download&id=1LqkS2BUdTdAh34ln99R0S_EBpfvAKD3U
-" target="_blank" class="btn-link">
-      Download CV <i class="uil uil-file-alt"></i>
-    </a>
-  </button>
+  <a href="https://drive.google.com/uc?export=download&id=1SS3Lxyg5FzJHbGM7NcoPIly5XM5Ux_eK" target="_blank" class="btn-link">
+    Download CV <i class="uil uil-file-alt"></i>
+  </a>
+</button>
           </div>
 
             <div class="social_icons">
@@ -117,7 +98,7 @@
           </div>
           <div class="featured-image">
             <div class="image">
-                <img src="images/Pic3.jpg" alt="avatar">
+                <img src="images/Profile.jpeg" alt="avatar">
             </div>
           </div>
           <div class="scroll-icon-box">
@@ -140,10 +121,10 @@
                     <p>I am well-versed in HTML, CSS and JavaScript , and other cutting edge
                        frameworks and libraries,which allows me to implement interactive features.                    </p>
                     <div class="about-btn">
-                        <button class="btn"><a href="https://drive.google.com/uc?export=download&id=1LqkS2BUdTdAh34ln99R0S_EBpfvAKD3U
-" target="_blank" class="btn-link">
-  Download CV <i class="uil uil-file-alt"></i>
-</a>
+                        <button class="btn">
+  <a href="https://drive.google.com/uc?export=download&id=1SS3Lxyg5FzJHbGM7NcoPIly5XM5Ux_eK" target="_blank" class="btn-link">
+    Download CV <i class="uil uil-file-alt"></i>
+  </a>
 </button>
                     </div>
                 </div>
@@ -170,6 +151,9 @@
                         <span>C</span>
                         <span>C++</span>
                         <span>Python</span>
+                        <span>Dart</span>
+                        <span>FastAPI</span>
+                        <span>Flutter</span>
                         <span>Spring Boot Java</span>
                     </div>
                 </div>
@@ -196,7 +180,7 @@
   <div class="project-container">
     <div class="project-box completed-box">
         <i class="uil uil-briefcase-alt"></i>
-        <h3>Completed</h3>
+        <h3>Projects</h3>
         <label>10+ Finished Projects</label>
     </div>
     <div class="project-box cert-box">
@@ -204,10 +188,10 @@
        <h3>Certificates</h3>
        <label>10+ Professional Certificates</label>
     </div>
-    <div class="project-box">
-        <i class="uil uil-award"></i>
-        <h3>Experience</h3>
-        <label>1+ Years in the field</label>
+    <div class="project-box experience-box">
+      <i class="uil uil-award"></i>
+      <h3>Experience</h3>
+      <label>1+ Years in the field</label>
     </div>
   </div>
 </section>
@@ -242,6 +226,25 @@
 
       <button id="completedNextBtn">&#10095;</button>
     </div>
+  </div>
+</div>
+
+
+<!-- Experience Modal -->
+<div id="experienceModal" class="modal">
+  <div class="modal-content">
+    <span class="close-experience-btn">&times;</span>
+
+    <h2>My Experience</h2>
+
+    <div class="experience-content">
+      <img src="images/Experience.png" alt="Experience Image" class="experience-img">
+
+      <p>
+        1+ years of experience in Full Stack Development with expertise in Flutter, Dart, FastAPI, Python, React, Node.js, Spring Boot, and MySQL. Skilled in building real-time applications, RESTful APIs, and responsive web and mobile solutions.
+      </p>
+    </div>
+
   </div>
 </div>
 
@@ -337,28 +340,42 @@
   })();
 
   // === Toast Function for Contact Form ===
-  function showToast(message, isSuccess = true) {
-    const toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.style.backgroundColor = isSuccess ? "#28a745" : "#dc3545";
-    toast.classList.add("show-toast");
+  function showNotification(message, type = "success") {
+  const notification = document.createElement("div");
+
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <span>${message}</span>
+  `;
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.classList.add("show");
+  }, 100);
+
+  setTimeout(() => {
+    notification.classList.remove("show");
 
     setTimeout(() => {
-      toast.classList.remove("show-toast");
-    }, 3000);
-  }
+      notification.remove();
+    }, 300);
+  }, 3000);
+}
 
   // === Contact Form Submission ===
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     emailjs.sendForm("service_8tktt3e", "template_73a0akg", this)
-      .then(() => {
-        showToast("✅ Message sent successfully!", true);
-        this.reset();
-      }, (error) => {
-        showToast("❌ Failed to send: " + error.text, false);
-      });
+.then(() => {
+    showNotification("✅ Message Sent Successfully!", "success");
+    this.reset();
+})
+.catch((error) => {
+    showNotification("❌ Failed to Send Message", "error");
+    console.error(error);
+});
   });
 
   // === Main Modal Logic ===
@@ -450,6 +467,12 @@ const projects = [
       link: "https://israveltech.github.io/Food-Delivery-System/"
     },
     {
+      img: "images/finalyearproject.png",
+      title: "ParkMe",
+      desc: "This is my final year project, a parking management system with real-time space availability.",
+      link: "https://effortless-choux-d62f15.netlify.app/"
+    },
+    {
       img: "images/BuySellUnplugged.png",
       title: "BuySellUnplugged",
       desc: "BuySellUnplugged app with real-time order tracking.",
@@ -494,27 +517,41 @@ const projects = [
 });
 
 // === DARK MODE TOGGLE WITH ICON SWITCH ===
-const darkToggle = document.getElementById("darkModeToggle");
-const moonIcon = document.getElementById("moonIcon");
-const sunIcon = document.getElementById("sunIcon");
 
-// Load preference from localStorage
-if (localStorage.getItem("dark-mode") === "true") {
-  document.body.classList.add("dark-mode");
-  moonIcon.style.display = "none";
-  sunIcon.style.display = "inline";
+const darkToggle = document.getElementById("darkModeToggle");
+
+if(localStorage.getItem("dark-mode") === "true"){
+    document.body.classList.add("dark-mode");
 }
 
 darkToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode");
 
-  const isDark = document.body.classList.contains("dark-mode");
-  moonIcon.style.display = isDark ? "none" : "inline";
-  sunIcon.style.display = isDark ? "inline" : "none";
-
-  localStorage.setItem("dark-mode", isDark);
+    localStorage.setItem(
+        "dark-mode",
+        document.body.classList.contains("dark-mode")
+    );
 });
 
+
+// EXPERIENCE MODAL
+const experienceBox = document.querySelector(".experience-box");
+const experienceModal = document.getElementById("experienceModal");
+const closeExperienceBtn = document.querySelector(".close-experience-btn");
+
+experienceBox.addEventListener("click", () => {
+    experienceModal.style.display = "block";
+});
+
+closeExperienceBtn.onclick = () => {
+    experienceModal.style.display = "none";
+};
+
+window.addEventListener("click", (e) => {
+    if (e.target === experienceModal) {
+        experienceModal.style.display = "none";
+    }
+});
 
 </script>
 

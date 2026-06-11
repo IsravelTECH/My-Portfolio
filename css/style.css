@@ -1027,3 +1027,125 @@ body.dark-mode h3 {
   padding: 6px 12px;
   border-radius: 6px;
 }
+
+
+.experience-content{
+    text-align:center;
+}
+
+.experience-img{
+    width:250px;
+    height:auto;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.close-experience-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+.notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    min-width: 320px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all .4s ease;
+    z-index: 9999;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #00c853, #00e676);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #d50000, #ff5252);
+}
+
+.theme-switch {
+    width: 70px;
+    height: 35px;
+    background: linear-gradient(135deg,#6dd5fa,#2980b9);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    transition: .4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.switch-slider {
+    width: 27px;
+    height: 27px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease;
+}
+
+.switch-slider i {
+    font-size: 16px;
+    color: #333;
+}
+
+.dark-mode .theme-switch {
+    background: linear-gradient(135deg,#141E30,#243B55);
+}
+
+.dark-mode .switch-slider {
+    left: 39px;
+}
+
+.dark-mode {
+    background: #0f172a;
+    color: #f8fafc;
+    transition: .4s ease;
+}
+
+
+
+body{
+    transition: background .4s ease,color .4s ease;
+}
+
+.dark-mode .project-box,
+.dark-mode .about-info,
+.dark-mode .skills-box,
+.dark-mode .contact-info,
+.dark-mode .modal-content{
+    background:#1e293b;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.dark-mode .nav-link,
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3{
+    color:#fff;
+}
