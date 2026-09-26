@@ -7,25 +7,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     1. AUTOMATIC DAY / NIGHT THEME & PREFERENCE SYSTEM
+     1. DAY / NIGHT THEME & PREFERENCE SYSTEM (DEFAULT: WHITE DAY THEME)
      ========================================================================== */
   const themeToggle = document.getElementById('themeToggle');
   
-  // Get system/stored preference ('auto', 'light', 'dark')
-  let themePref = localStorage.getItem('themePreference') || 'auto';
+  // Default to 'light' (Day Theme) on initial visit. Changes to dark ONLY on user click.
+  let themePref = localStorage.getItem('themePreference') || 'light';
 
   const applyTheme = () => {
-    let activeTheme = 'light';
-
-    if (themePref === 'auto') {
-      const currentHour = new Date().getHours();
-      // 06:00 - 17:59: Day mode | 18:00 - 05:59: Night mode
-      activeTheme = (currentHour >= 6 && currentHour < 18) ? 'light' : 'dark';
-    } else {
-      activeTheme = themePref;
-    }
-
-    if (activeTheme === 'dark') {
+    if (themePref === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       if (themeToggle) themeToggle.setAttribute('aria-label', 'Switch to day theme');
     } else {
@@ -106,54 +96,64 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (navToggleBtn && navMenu) {
-    navToggleBtn.addEventListener('click', () => {
+    const toggleNav = () => {
       navMenu.classList.toggle('active');
+      const isExpanded = navMenu.classList.contains('active');
+      navToggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
       const icon = navToggleBtn.querySelector('i');
       if (icon) {
-        if (navMenu.classList.contains('active')) {
+        if (isExpanded) {
           icon.classList.remove('uil-bars');
           icon.classList.add('uil-multiply');
-          navToggleBtn.setAttribute('aria-expanded', 'true');
         } else {
           icon.classList.remove('uil-multiply');
           icon.classList.add('uil-bars');
-          navToggleBtn.setAttribute('aria-expanded', 'false');
         }
       }
+    };
+
+    navToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleNav();
     });
 
     // Auto close drawer on navigation click
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          const icon = navToggleBtn.querySelector('i');
-          if (icon) {
-            icon.classList.remove('uil-multiply');
-            icon.classList.add('uil-bars');
-            navToggleBtn.setAttribute('aria-expanded', 'false');
-          }
+          toggleNav();
         }
       });
+    });
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggleBtn.contains(e.target)) {
+        toggleNav();
+      }
     });
   }
 
   /* ==========================================================================
-     5. TYPED.JS TEXT ANIMATION
+     5. TYPED.JS TEXT ANIMATION (2026 DEVELOPER ROLES)
      ========================================================================== */
   const typedTarget = document.querySelector('.typedText');
   if (typedTarget && typeof Typed !== 'undefined') {
     new Typed('.typedText', {
       strings: [
         'Software Developer',
-        'Full-Stack Web & API Architect',
-        'Frontend & Backend Engineering',
-        'Cross-Platform App Developer'
+        'Full Stack Developer',
+        'React Developer',
+        'React Native Developer',
+        'Flutter Developer',
+        'Python Developer',
+        'Mobile App Developer',
+        'Backend Engineer'
       ],
       loop: true,
       typeSpeed: 70,
       backSpeed: 40,
-      backDelay: 2200,
+      backDelay: 2000,
       showCursor: true,
       cursorChar: '|'
     });
@@ -172,16 +172,16 @@ document.addEventListener('DOMContentLoaded', () => {
       reset: false
     });
 
-    sr.reveal('.hero-tag-label', { delay: 80 });
-    sr.reveal('.hero-title', { delay: 120 });
-    sr.reveal('.hero-subtitle', { delay: 160 });
-    sr.reveal('.hero-location-pill', { delay: 200 });
-    sr.reveal('.hero-description', { delay: 240 });
-    sr.reveal('.hero-actions', { delay: 280 });
-    sr.reveal('.hero-socials-row', { delay: 320 });
-    sr.reveal('.hero-portrait-stage', { delay: 180, origin: 'right' });
-    sr.reveal('.dev-workflow-bar', { delay: 280, origin: 'bottom' });
-    sr.reveal('.code-window-card', { delay: 340, origin: 'bottom' });
+    sr.reveal('.availability-badge', { delay: 80 });
+    sr.reveal('.hero-name-title', { delay: 120 });
+    sr.reveal('.hero-role-wrapper', { delay: 150 });
+    sr.reveal('.hero-bio-summary', { delay: 180 });
+    sr.reveal('.hero-tech-block', { delay: 210 });
+    sr.reveal('.hero-cta-group', { delay: 240 });
+    sr.reveal('.glass-terminal', { delay: 270 });
+    sr.reveal('.hero-profile-stage', { delay: 180, origin: 'right' });
+    sr.reveal('.hero-workflow-timeline', { delay: 300, origin: 'bottom' });
+    sr.reveal('.hero-scroll-indicator', { delay: 340, origin: 'bottom' });
 
     sr.reveal('.section-header', { delay: 80 });
     sr.reveal('.stat-item', { interval: 80 });
@@ -199,11 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sr.reveal('.ai-card', { interval: 70 });
 
     sr.reveal('.contact-info-card', { interval: 80 });
+    sr.reveal('.contact-guarantee-badge', { delay: 180 });
     sr.reveal('.contact-form-card', { delay: 150 });
   }
 
   /* ==========================================================================
-     7. PROJECT FILTERING LOGIC
+     7. PROJECT FILTERING LOGIC (SMOOTH ANIMATION & COUNT SYNC)
      ========================================================================== */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -217,8 +218,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       projectCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
-        if (filterValue === 'all' || cardCategory === filterValue) {
+        const shouldShow = filterValue === 'all' || cardCategory === filterValue;
+
+        if (shouldShow) {
           card.style.display = 'flex';
+          if (typeof gsap !== 'undefined') {
+            gsap.fromTo(card, 
+              { opacity: 0, y: 15, scale: 0.98 },
+              { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' }
+            );
+          } else {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+          }
         } else {
           card.style.display = 'none';
         }
@@ -250,13 +262,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const monthLabel = totalMonths === 1 ? '1 mo' : `${totalMonths} mos`;
-    durationElem.textContent = `Jun 2026 – Present · ${monthLabel}`;
+    durationElem.textContent = `Aug 2026 – Present · ${monthLabel}`;
   };
 
   updateExperienceDuration();
 
   /* ==========================================================================
-     9. CERTIFICATION LIGHTBOX MODAL (ALL 7 CERTIFICATES)
+     9. CERTIFICATION LIGHTBOX MODAL & MOBILE CAROUSEL SYNC
      ========================================================================== */
   const certCards = document.querySelectorAll('.cert-card');
   const certLightbox = document.getElementById('certLightbox');
@@ -382,6 +394,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mobile Certificate Carousel Scroll Synchronization
+  const certsTrack = document.getElementById('certificatesTrack');
+  const certDotsContainer = document.getElementById('certMobileDots');
+  const certScrollPrev = document.getElementById('certScrollPrev');
+  const certScrollNext = document.getElementById('certScrollNext');
+
+  if (certsTrack && certDotsContainer) {
+    // Generate Pagination Dots
+    certDotsContainer.innerHTML = '';
+    certificatesData.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = `cert-dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', () => {
+        const card = certCards[i];
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+      certDotsContainer.appendChild(dot);
+    });
+
+    const updateActiveDot = () => {
+      const scrollLeft = certsTrack.scrollLeft;
+      const cardWidth = certCards[0] ? certCards[0].offsetWidth + 14 : 300;
+      const activeIdx = Math.min(
+        certificatesData.length - 1,
+        Math.max(0, Math.round(scrollLeft / cardWidth))
+      );
+
+      const dots = certDotsContainer.querySelectorAll('.cert-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === activeIdx) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    };
+
+    certsTrack.addEventListener('scroll', updateActiveDot, { passive: true });
+
+    if (certScrollPrev) {
+      certScrollPrev.addEventListener('click', () => {
+        const cardWidth = certCards[0] ? certCards[0].offsetWidth + 14 : 300;
+        certsTrack.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (certScrollNext) {
+      certScrollNext.addEventListener('click', () => {
+        const cardWidth = certCards[0] ? certCards[0].offsetWidth + 14 : 300;
+        certsTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    }
+  }
+
   /* ==========================================================================
      9. ACTIVE NAVIGATION HIGHLIGHT ON SCROLL
      ========================================================================== */
@@ -410,16 +479,63 @@ document.addEventListener('DOMContentLoaded', () => {
   highlightActiveSection();
 
   /* ==========================================================================
-     10. CONTACT FORM & PROFESSIONAL SUCCESS TOAST
+     10. PREMIUM ENQUIRY FORM CONTROLLER (FLOATING LABELS, VALIDATION, EMAILJS & TOAST)
      ========================================================================== */
   const contactForm = document.getElementById('contact-form');
+  const floatingInputs = document.querySelectorAll('.floating-input');
+  const messageTextarea = document.getElementById('message');
+  const charCounter = document.getElementById('message-char-counter');
 
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init('Xme14b3NE9dsk36kv');
+  // Floating label active/has-value sync
+  const updateFloatingState = (input) => {
+    if (!input) return;
+    if (input.value && input.value.trim() !== '') {
+      input.classList.add('has-value');
+    } else {
+      input.classList.remove('has-value');
+    }
+  };
+
+  floatingInputs.forEach(input => {
+    updateFloatingState(input);
+    input.addEventListener('input', () => updateFloatingState(input));
+    input.addEventListener('change', () => updateFloatingState(input));
+    input.addEventListener('blur', () => updateFloatingState(input));
+    input.addEventListener('focus', () => updateFloatingState(input));
+  });
+
+  // Message character counter
+  if (messageTextarea && charCounter) {
+    messageTextarea.addEventListener('input', () => {
+      const length = messageTextarea.value.trim().length;
+      charCounter.textContent = `${length} / 10 min`;
+      if (length >= 10) {
+        charCounter.classList.add('valid');
+      } else {
+        charCounter.classList.remove('valid');
+      }
+    });
   }
 
-  const showToast = ({ type = 'success', title, message, duration = 4000 } = {}) => {
-    // Remove any existing active toast
+  // Random Celebratory Success Messages
+  const randomCelebrations = [
+    "🚀 Your project journey starts here!",
+    "✨ Message delivered successfully!",
+    "💻 Let's build something awesome together!",
+    "🎯 Your enquiry is safely in my inbox.",
+    "🔥 Thanks! I'll connect with you soon.",
+    "🌟 Great choice! Talk soon.",
+    "⚡ Project request received successfully.",
+    "🎉 Your idea just reached my workspace."
+  ];
+
+  const getRandomCelebration = () => {
+    const randomIndex = Math.floor(Math.random() * randomCelebrations.length);
+    return randomCelebrations[randomIndex];
+  };
+
+  // Top-Right Success / Error Toast Notification
+  const showToast = ({ type = 'success', title, message, duration = 5000 } = {}) => {
     const existingToast = document.querySelector('.contact-success-toast');
     if (existingToast) existingToast.remove();
 
@@ -429,18 +545,18 @@ document.addEventListener('DOMContentLoaded', () => {
     toast.setAttribute('aria-live', 'polite');
 
     const iconClass = type === 'success' ? 'uil-check-circle' : 'uil-exclamation-circle';
-    const defaultTitle = type === 'success' ? 'Message sent successfully' : 'Message could not be sent';
-    const defaultMessage = type === 'success'
-      ? "Thanks for reaching out. I'll get back to you soon."
-      : 'Please check your details and try again.';
+    const toastTitle = title || (type === 'success' ? getRandomCelebration() : 'Enquiry could not be sent');
+    const toastMessage = message || (type === 'success'
+      ? "Thanks! I'll get back to you within 24 hours."
+      : 'Please verify your details and try again.');
 
     toast.innerHTML = `
       <div class="contact-success-icon">
         <i class="uil ${iconClass}"></i>
       </div>
       <div class="contact-success-content">
-        <strong class="contact-toast-title">${title || defaultTitle}</strong>
-        <span class="contact-toast-desc">${message || defaultMessage}</span>
+        <strong class="contact-toast-title">${toastTitle}</strong>
+        <span class="contact-toast-desc">${toastMessage}</span>
       </div>
       <button class="contact-success-close" type="button" aria-label="Close notification">
         <i class="uil uil-multiply"></i>
@@ -450,7 +566,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.appendChild(toast);
 
-    // Trigger smooth entrance
     requestAnimationFrame(() => {
       toast.classList.add('show');
     });
@@ -463,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.classList.add('hide');
       setTimeout(() => {
         if (toast.parentNode) toast.remove();
-      }, 320);
+      }, 350);
     };
 
     const closeBtn = toast.querySelector('.contact-success-close');
@@ -471,38 +586,134 @@ document.addEventListener('DOMContentLoaded', () => {
       closeBtn.addEventListener('click', dismissToast);
     }
 
-    // Auto dismiss after specified duration
     dismissTimer = setTimeout(dismissToast, duration);
   };
+
+  // Inline Validation Helpers
+  const setFieldError = (input, errorElement, message) => {
+    if (input) input.classList.add('input-invalid');
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.add('visible');
+    }
+  };
+
+  const clearFieldError = (input, errorElement) => {
+    if (input) input.classList.remove('input-invalid');
+    if (errorElement) {
+      errorElement.textContent = '';
+      errorElement.classList.remove('visible');
+    }
+  };
+
+  // Realtime clear on typing
+  const nameInput = document.getElementById('user_name');
+  const nameError = document.getElementById('name-error');
+  if (nameInput) nameInput.addEventListener('input', () => clearFieldError(nameInput, nameError));
+
+  const emailInput = document.getElementById('user_email');
+  const emailError = document.getElementById('email-error');
+  if (emailInput) emailInput.addEventListener('input', () => clearFieldError(emailInput, emailError));
+
+  const phoneInput = document.getElementById('phone_number');
+  const phoneError = document.getElementById('phone-error');
+  if (phoneInput) phoneInput.addEventListener('input', () => clearFieldError(phoneInput, phoneError));
+
+  const messageError = document.getElementById('message-error');
+  if (messageTextarea) messageTextarea.addEventListener('input', () => clearFieldError(messageTextarea, messageError));
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('Xme14b3NE9dsk36kv');
+  }
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
+      let isValid = true;
+
+      // Validate Full Name
+      const nameVal = nameInput ? nameInput.value.trim() : '';
+      if (!nameVal || nameVal.length < 2) {
+        setFieldError(nameInput, nameError, 'Please enter your full name (at least 2 characters).');
+        isValid = false;
+      } else {
+        clearFieldError(nameInput, nameError);
+      }
+
+      // Validate Email
+      const emailVal = emailInput ? emailInput.value.trim() : '';
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailVal || !emailRegex.test(emailVal)) {
+        setFieldError(emailInput, emailError, 'Please enter a valid email address.');
+        isValid = false;
+      } else {
+        clearFieldError(emailInput, emailError);
+      }
+
+      // Validate Phone (Optional, but if filled, must be valid phone digits)
+      const phoneVal = phoneInput ? phoneInput.value.trim() : '';
+      if (phoneVal) {
+        const phoneRegex = /^[\d\s\+\-\(\)]{7,20}$/;
+        const digitsOnly = phoneVal.replace(/\D/g, '');
+        if (!phoneRegex.test(phoneVal) || digitsOnly.length < 7) {
+          setFieldError(phoneInput, phoneError, 'Please enter a valid phone number (digits only).');
+          isValid = false;
+        } else {
+          clearFieldError(phoneInput, phoneError);
+        }
+      } else {
+        clearFieldError(phoneInput, phoneError);
+      }
+
+      // Validate Message
+      const messageVal = messageTextarea ? messageTextarea.value.trim() : '';
+      if (!messageVal || messageVal.length < 10) {
+        setFieldError(messageTextarea, messageError, 'Please enter your message (at least 10 characters).');
+        isValid = false;
+      } else {
+        clearFieldError(messageTextarea, messageError);
+      }
+
+      if (!isValid) {
+        const firstInvalid = contactForm.querySelector('.input-invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalHtml = submitBtn ? submitBtn.innerHTML : 'Send Message';
+      const originalHtml = submitBtn ? submitBtn.innerHTML : '<span>Send Enquiry</span><i class="uil uil-message btn-icon"></i>';
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="uil uil-spinner-alt"></i> Sending...';
+        submitBtn.innerHTML = '<i class="uil uil-spinner-alt"></i> <span>Sending Enquiry...</span>';
       }
+
+      const resetFormComplete = () => {
+        contactForm.reset();
+        floatingInputs.forEach(input => updateFloatingState(input));
+        if (charCounter) {
+          charCounter.textContent = '0 / 10 min';
+          charCounter.classList.remove('valid');
+        }
+      };
 
       if (typeof emailjs !== 'undefined') {
         emailjs.sendForm('service_8tktt3e', 'template_73a0akg', this)
           .then(() => {
             showToast({
               type: 'success',
-              title: 'Message sent successfully',
-              message: "Thanks for reaching out. I'll get back to you soon."
+              title: getRandomCelebration(),
+              message: "Thanks! I'll get back to you within 24 hours."
             });
-            contactForm.reset();
+            resetFormComplete();
           })
           .catch((err) => {
             console.error('EmailJS Error:', err);
             showToast({
               type: 'error',
-              title: 'Message could not be sent',
-              message: 'Please check your details or email me directly at israveltech@gmail.com.'
+              title: 'Enquiry could not be sent',
+              message: 'Please check your internet connection or email directly at israveltech@gmail.com.'
             });
           })
           .finally(() => {
@@ -514,15 +725,104 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         showToast({
           type: 'success',
-          title: 'Message sent successfully',
-          message: "Thanks for reaching out. I'll get back to you soon."
+          title: getRandomCelebration(),
+          message: "Thanks! I'll get back to you within 24 hours."
         });
-        contactForm.reset();
+        resetFormComplete();
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalHtml;
         }
       }
+    });
+  }
+
+  /* ==========================================================================
+     11. HERO GLASS TERMINAL MULTI-LANGUAGE SWITCHER
+     ========================================================================== */
+  const termTabs = document.querySelectorAll('.term-tab');
+  const termSnippets = document.querySelectorAll('.term-snippet');
+
+  if (termTabs.length > 0 && termSnippets.length > 0) {
+    let currentCodeIdx = 0;
+    const tabLangs = Array.from(termTabs).map(tab => tab.getAttribute('data-lang'));
+
+    const switchTerminalSnippet = (lang) => {
+      termTabs.forEach(tab => {
+        if (tab.getAttribute('data-lang') === lang) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+
+      termSnippets.forEach(snip => {
+        if (snip.id === `tsnip-${lang}`) {
+          snip.classList.add('active');
+        } else {
+          snip.classList.remove('active');
+        }
+      });
+    };
+
+    termTabs.forEach((tab, idx) => {
+      tab.addEventListener('click', () => {
+        currentCodeIdx = idx;
+        const lang = tab.getAttribute('data-lang');
+        switchTerminalSnippet(lang);
+      });
+    });
+
+    // Auto rotate snippets every 4.5 seconds
+    setInterval(() => {
+      currentCodeIdx = (currentCodeIdx + 1) % tabLangs.length;
+      switchTerminalSnippet(tabLangs[currentCodeIdx]);
+    }, 4500);
+  }
+
+  /* ==========================================================================
+     12. DEVELOPER WORKFLOW TIMELINE SEQUENTIAL PULSE (6-STEPS)
+     ========================================================================== */
+  const workflowNodes = document.querySelectorAll('#devWorkflowPipeline .workflow-node');
+  if (workflowNodes.length > 0) {
+    let activeNodeIdx = 0;
+
+    setInterval(() => {
+      workflowNodes.forEach(node => node.classList.remove('active', 'pulse-active'));
+      activeNodeIdx = (activeNodeIdx + 1) % workflowNodes.length;
+      if (workflowNodes[activeNodeIdx]) {
+        workflowNodes[activeNodeIdx].classList.add('active');
+      }
+    }, 1800);
+  }
+
+  /* ==========================================================================
+     13. VANILLA TILT & GSAP MICRO-INTERACTIONS
+     ========================================================================== */
+  if (typeof VanillaTilt !== 'undefined') {
+    const tiltElements = document.querySelectorAll('[data-tilt]');
+    if (tiltElements.length > 0) {
+      VanillaTilt.init(tiltElements, {
+        reverse: false,
+        max: 8,
+        perspective: 1000,
+        scale: 1.02,
+        speed: 400,
+        transition: true,
+        glare: false
+      });
+    }
+  }
+
+  if (typeof gsap !== 'undefined') {
+    // Subtle ambient particle floating with GSAP
+    gsap.to('.hero-bg-particle', {
+      y: -15,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      stagger: 0.4
     });
   }
 

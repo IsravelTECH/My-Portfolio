@@ -76,130 +76,235 @@
   <main>
 
     <!-- ==========================================================================
-         2. HERO / FEATURED SECTION (EDITORIAL DEVELOPER COMPOSITION)
+         2. HERO / BANNER SECTION (PREMIUM SPLIT DEVELOPER HERO 2026)
          ========================================================================== -->
-    <section class="hero-section" id="home">
-      <div class="container hero-grid">
+    <section class="hero-section hero-split" id="home">
+      <!-- Layered Background: Ambient Radial Glow, Mesh Gradient & Grid Lines -->
+      <div class="hero-ambient-bg" aria-hidden="true">
+        <div class="hero-mesh-glow"></div>
+        <div class="hero-grid-lines"></div>
+        <div class="hero-particles-bg">
+          <span class="hero-bg-particle hbp-1"></span>
+          <span class="hero-bg-particle hbp-2"></span>
+          <span class="hero-bg-particle hbp-3"></span>
+          <span class="hero-bg-particle hbp-4"></span>
+          <span class="hero-bg-particle hbp-5"></span>
+        </div>
+      </div>
+
+      <div class="container hero-container">
         
-        <!-- Left Hero Content -->
-        <div class="hero-content">
-          <div class="hero-tag-label">
-            <span class="status-dot"></span>
-            <span>SOFTWARE DEVELOPER</span>
+        <!-- LEFT COLUMN: Professional Headline, Dynamic Roles, Tech Chips, CTAs & Glass Code Terminal -->
+        <div class="hero-left-col">
+          <!-- Availability Badge -->
+          <div class="availability-badge">
+            <span class="status-pulse-dot"></span>
+            <span>Available for Freelance &amp; Full-Time</span>
           </div>
 
-          <h1 class="hero-title">
-            ISRAVEL S
-          </h1>
-
-          <div class="hero-subtitle">
-            <span class="typedText"></span>
+          <!-- Headline -->
+          <div class="hero-headline-group">
+            <span class="hero-greeting-text">Hi, I'm</span>
+            <h1 class="hero-name-title">ISRAVEL S</h1>
+            <div class="hero-role-wrapper">
+              <span class="typedText"></span>
+            </div>
           </div>
 
-          <div class="hero-location-pill">
-            <i class="uil uil-map-marker"></i>
-            <span>Chennai, Tamil Nadu, India</span>
-          </div>
-
-          <p class="hero-description">
-            Building responsive web applications, software solutions and digital experiences with clean interfaces and practical architecture.
+          <!-- Professional Description -->
+          <p class="hero-bio-summary">
+            I build high-performance web applications, cross-platform mobile apps, and scalable backend systems using React, React Native, Flutter, TypeScript, Python, and modern development workflows.
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              <span>View My Work</span>
-              <i class="uil uil-arrow-up-right btn-icon"></i>
-            </a>
-            <a href="https://drive.usercontent.google.com/download?id=1jWbpx-evn0OK-oWZuUoNr6pxdkJa9TB8&export=download&confirm=t" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" download>
+          <!-- Tech Stack Chips -->
+          <div class="hero-tech-block">
+            <span class="hero-tech-label">Tech Stack</span>
+            <div class="hero-tech-pills-row">
+              <span class="tech-chip"><i class="uil uil-react"></i> React</span>
+              <span class="tech-chip"><i class="uil uil-brackets-curly"></i> TypeScript</span>
+              <span class="tech-chip"><i class="uil uil-mobile-android-alt"></i> React Native</span>
+              <span class="tech-chip"><i class="uil uil-layer-group"></i> Flutter</span>
+              <span class="tech-chip"><i class="uil uil-bolt"></i> Dart</span>
+              <span class="tech-chip"><i class="uil uil-server"></i> Python</span>
+              <span class="tech-chip"><i class="uil uil-exchange"></i> FastAPI</span>
+              <span class="tech-chip"><i class="uil uil-code-branch"></i> Node.js</span>
+              <span class="tech-chip"><i class="uil uil-database"></i> SQL</span>
+              <span class="tech-chip"><i class="uil uil-github-alt"></i> Git</span>
+            </div>
+          </div>
+
+          <!-- Premium CTA Buttons (3 buttons) -->
+          <div class="hero-cta-group">
+            <a href="https://drive.usercontent.google.com/download?id=1jWbpx-evn0OK-oWZuUoNr6pxdkJa9TB8&export=download&confirm=t" target="_blank" rel="noopener noreferrer" class="btn btn-primary hero-btn" download>
               <span>Download Resume</span>
               <i class="uil uil-file-download btn-icon"></i>
             </a>
-          </div>
-
-          <!-- Social Links below buttons -->
-          <div class="hero-socials-row">
-            <a href="https://github.com/IsravelTECH" target="_blank" rel="noopener noreferrer" class="hero-social-link" title="GitHub">
-              <i class="uil uil-github-alt"></i>
-              <span>GitHub</span>
+            <a href="#projects" class="btn btn-secondary hero-btn">
+              <span>View Projects</span>
+              <i class="uil uil-arrow-up-right btn-icon"></i>
             </a>
-            <a href="https://www.linkedin.com/in/isravel-s-3a74712a2/" target="_blank" rel="noopener noreferrer" class="hero-social-link" title="LinkedIn">
-              <i class="uil uil-linkedin-alt"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="mailto:israveltech@gmail.com" class="hero-social-link" title="Email">
-              <i class="uil uil-envelope-alt"></i>
-              <span>Email</span>
+            <a href="#contact" class="btn btn-outline hero-btn">
+              <span>Let's Talk</span>
+              <i class="uil uil-comment-alt-lines btn-icon"></i>
             </a>
           </div>
-        </div>
 
-        <!-- Right Hero Visual: Editorial Developer Composition -->
-        <div class="hero-visual-wrapper">
-          <div class="hero-portrait-stage">
-            <span class="dev-tag-float dev-tag-1">&lt;/&gt;</span>
-            <span class="dev-tag-float dev-tag-2">API</span>
-            <span class="dev-tag-float dev-tag-3">DB</span>
-
-            <div class="hero-portrait-frame">
-              <img src="images/Profile.jpeg" alt="ISRAVEL S - Software Developer" class="hero-portrait-img">
-            </div>
-          </div>
-
-          <!-- Developer Workflow Pipeline Animation (Code -> Build -> Test -> Deploy) -->
-          <div class="dev-workflow-bar" aria-label="Developer Workflow Pipeline">
-            <span class="workflow-step step-code"><i class="uil uil-brackets-curly"></i> Code</span>
-            <span class="workflow-arrow">&rarr;</span>
-            <span class="workflow-step step-build"><i class="uil uil-setting"></i> Build</span>
-            <span class="workflow-arrow">&rarr;</span>
-            <span class="workflow-step step-test"><i class="uil uil-check-circle"></i> Test</span>
-            <span class="workflow-arrow">&rarr;</span>
-            <span class="workflow-step step-deploy"><i class="uil uil-rocket"></i> Deploy</span>
-          </div>
-
-          <!-- Animated Code Window Widget -->
-          <div class="code-window-card">
-            <div class="code-window-header">
-              <div class="code-window-controls">
-                <span class="code-dot code-dot-red"></span>
-                <span class="code-dot code-dot-yellow"></span>
-                <span class="code-dot code-dot-green"></span>
+          <!-- Glass Code Terminal -->
+          <div class="glass-terminal" id="heroCodeTerminal" data-tilt data-tilt-max="6" data-tilt-speed="400">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="term-dot term-red"></span>
+                <span class="term-dot term-yellow"></span>
+                <span class="term-dot term-green"></span>
               </div>
-              <div class="code-window-tab">
-                <i class="uil uil-file-code-alt"></i>
-                <span>developer.js</span>
+              <div class="terminal-tabs">
+                <button class="term-tab active" data-lang="react"><i class="uil uil-react"></i> React</button>
+                <button class="term-tab" data-lang="flutter"><i class="uil uil-layer-group"></i> Flutter</button>
+                <button class="term-tab" data-lang="rn"><i class="uil uil-mobile-android-alt"></i> React Native</button>
+                <button class="term-tab" data-lang="python"><i class="uil uil-server"></i> Python</button>
               </div>
             </div>
-            <div class="code-window-body">
-              <div class="code-line"><span class="code-ln">1</span><span class="code-text"><span class="syn-k">const</span> developer <span class="syn-p">=</span> <span class="syn-p">{</span></span></div>
-              <div class="code-line"><span class="code-ln">2</span><span class="code-text">&nbsp;&nbsp;<span class="syn-k">name</span><span class="syn-p">:</span> <span class="syn-s">"ISRAVEL S"</span><span class="syn-p">,</span></span></div>
-              <div class="code-line"><span class="code-ln">3</span><span class="code-text">&nbsp;&nbsp;<span class="syn-k">role</span><span class="syn-p">:</span> <span class="syn-s">"Software Developer"</span><span class="syn-p">,</span></span></div>
-              <div class="code-line"><span class="code-ln">4</span><span class="code-text">&nbsp;&nbsp;<span class="syn-k">status</span><span class="syn-p">:</span> <span class="syn-s">"Ready to build"</span><span class="blinking-cursor"></span></span></div>
-              <div class="code-line"><span class="code-ln">5</span><span class="code-text"><span class="syn-p">};</span></span></div>
+            <div class="terminal-body">
+              <!-- React Snippet -->
+              <div class="term-snippet active" id="tsnip-react">
+                <div class="code-line"><span class="code-ln">1</span><span class="code-text"><span class="syn-k">const</span> <span class="syn-s">Developer</span> <span class="syn-p">=</span> <span class="syn-p">()</span> <span class="syn-p">=&gt;</span> <span class="syn-p">(</span></span></div>
+                <div class="code-line"><span class="code-ln">2</span><span class="code-text">&nbsp;&nbsp;<span class="syn-p">&lt;</span><span class="syn-s">Portfolio</span> <span class="syn-p">/&gt;</span></span></div>
+                <div class="code-line"><span class="code-ln">3</span><span class="code-text"><span class="syn-p">);</span><span class="code-cursor"></span></span></div>
+              </div>
+              <!-- Flutter Snippet -->
+              <div class="term-snippet" id="tsnip-flutter">
+                <div class="code-line"><span class="code-ln">1</span><span class="code-text"><span class="syn-k">void</span> <span class="syn-s">main</span><span class="syn-p">()</span> <span class="syn-p">{</span></span></div>
+                <div class="code-line"><span class="code-ln">2</span><span class="code-text">&nbsp;&nbsp;<span class="syn-v">runApp</span><span class="syn-p">(</span><span class="syn-s">MyPortfolio</span><span class="syn-p">());</span></span></div>
+                <div class="code-line"><span class="code-ln">3</span><span class="code-text"><span class="syn-p">}</span><span class="code-cursor"></span></span></div>
+              </div>
+              <!-- React Native Snippet -->
+              <div class="term-snippet" id="tsnip-rn">
+                <div class="code-line"><span class="code-ln">1</span><span class="code-text"><span class="syn-k">export</span> <span class="syn-k">default</span> <span class="syn-p">()</span> <span class="syn-p">=&gt;</span> <span class="syn-p">(</span></span></div>
+                <div class="code-line"><span class="code-ln">2</span><span class="code-text">&nbsp;&nbsp;<span class="syn-p">&lt;</span><span class="syn-s">Text</span><span class="syn-p">&gt;</span><span class="syn-v">Hello World</span><span class="syn-p">&lt;/</span><span class="syn-s">Text</span><span class="syn-p">&gt;</span></span></div>
+                <div class="code-line"><span class="code-ln">3</span><span class="code-text"><span class="syn-p">);</span><span class="code-cursor"></span></span></div>
+              </div>
+              <!-- Python Snippet -->
+              <div class="term-snippet" id="tsnip-python">
+                <div class="code-line"><span class="code-ln">1</span><span class="code-text"><span class="syn-k">def</span> <span class="syn-s">deploy</span><span class="syn-p">():</span></span></div>
+                <div class="code-line"><span class="code-ln">2</span><span class="code-text">&nbsp;&nbsp;<span class="syn-k">return</span> <span class="syn-v">"Ready"</span><span class="code-cursor"></span></span></div>
+              </div>
             </div>
           </div>
 
         </div>
 
+        <!-- RIGHT COLUMN: Animated MyPic.png, Developer Orb, Orbit Rings, Particles, Tech Orbit Icons & Floating Glass Cards -->
+        <div class="hero-right-col">
+          <div class="hero-profile-stage" id="heroProfileStage">
+            
+            <!-- Layer 1: Soft Teal Radial Developer Orb Glow -->
+            <div class="developer-orb" aria-hidden="true"></div>
+
+            <!-- Layer 2: Rotating Dotted Orbit Ring -->
+            <div class="orbit-ring orbit-ring-dotted" aria-hidden="true"></div>
+
+            <!-- Layer 3: Thin Circular Rings -->
+            <div class="orbit-ring orbit-ring-thin-1" aria-hidden="true"></div>
+            <div class="orbit-ring orbit-ring-thin-2" aria-hidden="true"></div>
+
+            <!-- Layer 4: Orbiting Floating Tech Icons (React, TypeScript, Flutter, Dart, Python, Git, VS Code, Node.js) -->
+            <div class="orbit-tech-icons-track" aria-hidden="true">
+              <div class="orbit-icon-item oi-react" title="React"><i class="uil uil-react"></i></div>
+              <div class="orbit-icon-item oi-ts" title="TypeScript"><i class="uil uil-brackets-curly"></i></div>
+              <div class="orbit-icon-item oi-flutter" title="Flutter"><i class="uil uil-layer-group"></i></div>
+              <div class="orbit-icon-item oi-dart" title="Dart"><i class="uil uil-bolt"></i></div>
+              <div class="orbit-icon-item oi-python" title="Python"><i class="uil uil-server"></i></div>
+              <div class="orbit-icon-item oi-git" title="Git"><i class="uil uil-github-alt"></i></div>
+              <div class="orbit-icon-item oi-vscode" title="VS Code"><i class="uil uil-desktop"></i></div>
+              <div class="orbit-icon-item oi-node" title="Node.js"><i class="uil uil-code-branch"></i></div>
+            </div>
+
+            <!-- Transparent Profile Image Cutout with Floating Animation -->
+            <div class="hero-profile-wrapper floating-profile" data-tilt data-tilt-max="7" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+              <img src="images/BannerPic.png" alt="ISRAVEL S - Full Stack Developer" class="hero-profile-img" loading="eager">
+            </div>
+
+            <!-- Floating Glass Cards (4 Cards) -->
+            <div class="floating-glass-card fc-1" data-tilt data-tilt-max="10">
+              <div class="fc-icon react-icon"><i class="uil uil-react"></i></div>
+              <div class="fc-content">
+                <strong>React</strong>
+                <span>⚛ Building Modern UI</span>
+              </div>
+            </div>
+
+            <div class="floating-glass-card fc-2" data-tilt data-tilt-max="10">
+              <div class="fc-icon flutter-icon"><i class="uil uil-mobile-android-alt"></i></div>
+              <div class="fc-content">
+                <strong>Flutter</strong>
+                <span>📱 Cross Platform Apps</span>
+              </div>
+            </div>
+
+            <div class="floating-glass-card fc-3" data-tilt data-tilt-max="10">
+              <div class="fc-icon python-icon"><i class="uil uil-server"></i></div>
+              <div class="fc-content">
+                <strong>Python</strong>
+                <span>⚡ Backend Development</span>
+              </div>
+            </div>
+
+            <div class="floating-glass-card fc-4" data-tilt data-tilt-max="10">
+              <div class="fc-icon github-icon"><i class="uil uil-github-alt"></i></div>
+              <div class="fc-content">
+                <strong>GitHub</strong>
+                <span>🚀 Clean Code Workflow</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- HERO BOTTOM ELEMENT: 6-Step Developer Workflow Timeline (Design -> Code -> Build -> Test -> Deploy -> Monitor) -->
+      <div class="container hero-bottom-container">
+        <div class="hero-workflow-timeline" id="devWorkflowPipeline" aria-label="Developer Workflow">
+          <div class="workflow-node active" data-step="0"><span class="wf-dot"></span><span class="wf-title">DESIGN</span></div>
+          <span class="wf-connector"></span>
+          <div class="workflow-node" data-step="1"><span class="wf-dot"></span><span class="wf-title">CODE</span></div>
+          <span class="wf-connector"></span>
+          <div class="workflow-node" data-step="2"><span class="wf-dot"></span><span class="wf-title">BUILD</span></div>
+          <span class="wf-connector"></span>
+          <div class="workflow-node" data-step="3"><span class="wf-dot"></span><span class="wf-title">TEST</span></div>
+          <span class="wf-connector"></span>
+          <div class="workflow-node" data-step="4"><span class="wf-dot"></span><span class="wf-title">DEPLOY</span></div>
+          <span class="wf-connector"></span>
+          <div class="workflow-node" data-step="5"><span class="wf-dot"></span><span class="wf-title">MONITOR</span></div>
+        </div>
+
+        <!-- Scroll Down Mouse Indicator -->
+        <a href="#about" class="hero-scroll-indicator" aria-label="Scroll to About Section">
+          <div class="scroll-mouse-icon">
+            <span class="scroll-wheel-dot"></span>
+          </div>
+          <span class="scroll-text">Scroll Down</span>
+        </a>
       </div>
     </section>
 
     <!-- ==========================================================================
-         3. QUICK STATS BAR (CONSISTENT 15+ COMPLETED PROJECTS)
+         3. QUICK STATS BAR (CONSISTENT 20+ COMPLETED PROJECTS)
          ========================================================================== -->
     <section class="stats-bar">
       <div class="container stats-grid">
         <div class="stat-item">
-          <span class="stat-number">15+</span>
+          <span class="stat-number">20+</span>
           <span class="stat-label">Completed Projects</span>
           <span class="stat-desc">Web, Mobile & Full-Stack Apps</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">1+</span>
+          <span class="stat-number">2+</span>
           <span class="stat-label">Years Experience</span>
           <span class="stat-desc">Solution Engineer & Intern</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">7+</span>
+          <span class="stat-number">10+</span>
           <span class="stat-label">Certifications</span>
           <span class="stat-desc">Verified Technical Credentials</span>
         </div>
@@ -348,7 +453,7 @@
 
         <div class="skills-grid">
           
-          <!-- Frontend Development Card -->
+          <!-- 1. Frontend Development Card -->
           <div class="skill-card">
             <div class="skill-card-icon">
               <i class="uil uil-desktop"></i>
@@ -358,20 +463,19 @@
               <span class="skill-badge">HTML5</span>
               <span class="skill-badge">CSS3</span>
               <span class="skill-badge">Bootstrap</span>
-              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">JavaScript (ES6+)</span>
               <span class="skill-badge">React.js</span>
-              <span class="skill-badge">React Native</span>
-              <span class="skill-badge">Flutter</span>
-              <span class="skill-badge">Responsive Web Design</span>
+              <span class="skill-badge">Responsive Design</span>
+              <span class="skill-badge">UI Component Architecture</span>
             </div>
           </div>
 
-          <!-- Backend Development Card -->
+          <!-- 2. Backend Engineering Card -->
           <div class="skill-card">
             <div class="skill-card-icon">
               <i class="uil uil-server"></i>
             </div>
-            <h3 class="skill-card-title">Backend Development</h3>
+            <h3 class="skill-card-title">Backend Engineering</h3>
             <div class="skill-badges">
               <span class="skill-badge">Node.js</span>
               <span class="skill-badge">Express.js</span>
@@ -385,37 +489,52 @@
             </div>
           </div>
 
-          <!-- Database & Data Card -->
-          <div class="skill-card">
-            <div class="skill-card-icon">
-              <i class="uil uil-database"></i>
-            </div>
-            <h3 class="skill-card-title">Database & Data</h3>
-            <div class="skill-badges">
-              <span class="skill-badge">MySQL</span>
-              <span class="skill-badge">MSSQL</span>
-              <span class="skill-badge">MongoDB</span>
-              <span class="skill-badge">PostgreSQL</span>
-              <span class="skill-badge">SQL Queries</span>
-              <span class="skill-badge">Schema Design</span>
-            </div>
-          </div>
-
-          <!-- Mobile & Tools Card (WITH VISIBLE SMARTPHONE ICON) -->
+          <!-- 3. Mobile Development Card -->
           <div class="skill-card">
             <div class="skill-card-icon">
               <i class="uil uil-mobile-android-alt"></i>
             </div>
-            <h3 class="skill-card-title">Mobile & Tools</h3>
+            <h3 class="skill-card-title">Mobile Development</h3>
             <div class="skill-badges">
               <span class="skill-badge">Flutter</span>
               <span class="skill-badge">Dart</span>
               <span class="skill-badge">React Native</span>
+              <span class="skill-badge">Android Studio</span>
+              <span class="skill-badge">Cross-Platform UI</span>
+              <span class="skill-badge">Mobile State Management</span>
+            </div>
+          </div>
+
+          <!-- 4. Database & Persistence Card -->
+          <div class="skill-card">
+            <div class="skill-card-icon">
+              <i class="uil uil-database"></i>
+            </div>
+            <h3 class="skill-card-title">Database & Persistence</h3>
+            <div class="skill-badges">
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">MSSQL Server</span>
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">Complex SQL Queries</span>
+              <span class="skill-badge">Relational Schema Design</span>
+            </div>
+          </div>
+
+          <!-- 5. Developer Tools & DevOps Card -->
+          <div class="skill-card">
+            <div class="skill-card-icon">
+              <i class="uil uil-wrench"></i>
+            </div>
+            <h3 class="skill-card-title">Developer Tools &amp; DevOps</h3>
+            <div class="skill-badges">
               <span class="skill-badge">Git</span>
               <span class="skill-badge">GitHub</span>
               <span class="skill-badge">VS Code</span>
               <span class="skill-badge">IntelliJ IDEA</span>
               <span class="skill-badge">Postman</span>
+              <span class="skill-badge">Cloudinary</span>
+              <span class="skill-badge">Render / Netlify / Vercel</span>
             </div>
           </div>
 
@@ -452,6 +571,16 @@
 
           <div class="service-card">
             <div class="service-icon-box">
+              <i class="uil uil-react"></i>
+            </div>
+            <h3 class="service-title">React Web Engineering</h3>
+            <p class="service-desc">
+              Dynamic single-page and multi-page web applications built with reusable React component architectures, custom hooks, and state management.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-box">
               <i class="uil uil-layer-group"></i>
             </div>
             <h3 class="service-title">Full-Stack Development</h3>
@@ -474,9 +603,9 @@
             <div class="service-icon-box">
               <i class="uil uil-mobile-android-alt"></i>
             </div>
-            <h3 class="service-title">Mobile Application Development</h3>
+            <h3 class="service-title">Cross-Platform Mobile Apps</h3>
             <p class="service-desc">
-              Cross-platform mobile applications using Flutter and React Native delivering fluid performance on iOS and Android.
+              Native-feeling mobile apps using Flutter and React Native delivering fluid performance across iOS and Android platforms.
             </p>
           </div>
 
@@ -494,7 +623,7 @@
             <div class="service-icon-box">
               <i class="uil uil-search-alt"></i>
             </div>
-            <h3 class="service-title">SEO & Web Optimization</h3>
+            <h3 class="service-title">SEO &amp; Web Optimization</h3>
             <p class="service-desc">
               Technical on-page SEO, speed optimizations, and semantic standards to ensure discoverability and fast page loads.
             </p>
@@ -506,48 +635,81 @@
     </section>
 
     <!-- ==========================================================================
-         7. FEATURED PROJECTS (15+ PROJECTS)
+         7. FEATURED PROJECTS (20+ PROJECTS)
+         ========================================================================== -->
+    <!-- ==========================================================================
+         7. FEATURED PROJECTS (20+ PROJECTS & DEV STUDIO SHOWCASE)
          ========================================================================== -->
     <section class="section section-alt" id="projects">
       <div class="container">
         
         <div class="section-header">
           <span class="section-tag">// 04 / PROJECTS</span>
-          <h2 class="section-title">Featured Projects (15+ Completed)</h2>
+          <h2 class="section-title">Featured Projects (20+ Completed)</h2>
           <p class="section-subtitle">
-            Explore live applications spanning multi-vendor e-commerce, smart parking management, and full-stack food delivery.
+            Engineered full-stack platforms, cross-platform mobile apps, cloud architectures, and IoT management systems.
           </p>
         </div>
 
-        <!-- Filter Tabs -->
+        <!-- Filter Tabs with Count Badges -->
         <div class="project-filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="web">Web Apps</button>
-          <button class="filter-btn" data-filter="mobile">IoT & Systems</button>
+          <button class="filter-btn active" data-filter="all">
+            <span>All Projects</span>
+            <span class="filter-count">8</span>
+          </button>
+          <button class="filter-btn" data-filter="fullstack">
+            <span>Full Stack</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="web">
+            <span>Web Apps</span>
+            <span class="filter-count">3</span>
+          </button>
+          <button class="filter-btn" data-filter="mobile">
+            <span>Mobile Apps</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="iot">
+            <span>IoT &amp; Cloud</span>
+            <span class="filter-count">1</span>
+          </button>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid" id="projectsGrid">
           
           <!-- Project 1: ParkMe Smart Parking System -->
-          <article class="project-card" data-category="mobile">
+          <article class="project-card" data-category="iot" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Live App</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/finalyearproject.png" alt="ParkMe Smart Parking System preview" class="project-img">
-              <span class="project-category-tag">Final Year Project</span>
+              <img src="images/finalyearproject.png" alt="ParkMe Smart Parking System preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">IoT &amp; Cloud Platform</span>
               <span class="project-date-tag">05/2025 – 05/2026</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">ParkMe Smart Parking System</h3>
-              <p class="project-subtitle">Smart Parking Booking & Management</p>
+              <div class="project-title-row">
+                <h3 class="project-title">ParkMe Smart Parking System</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">Smart Parking Booking &amp; Management</p>
               <p class="project-description">
-                Developed a smart parking booking platform with authentication and payment integration. Implemented nearby parking search and a booking dashboard. Designed a responsive modern UI and deployed the application online.
+                Engineered a smart parking platform with dynamic space allocation, secure user authentication, real-time slot polling, and integrated payment gateway.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">JWT</span>
+                <span class="tech-tag"><i class="uil uil-react"></i> React.js</span>
+                <span class="tech-tag"><i class="uil uil-code-branch"></i> Node.js</span>
+                <span class="tech-tag"><i class="uil uil-server"></i> Express.js</span>
+                <span class="tech-tag"><i class="uil uil-database"></i> MongoDB</span>
+                <span class="tech-tag"><i class="uil uil-shield-check"></i> JWT</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://effortless-choux-d62f15.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -563,25 +725,38 @@
           </article>
 
           <!-- Project 2: BuyBuddy -->
-          <article class="project-card" data-category="fullstack">
+          <article class="project-card" data-category="fullstack" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Full Stack</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/Buybuddy.png" alt="BuyBuddy Full-Stack E-Commerce preview" class="project-img">
-              <span class="project-category-tag">Full Stack</span>
+              <img src="images/Buybuddy.png" alt="BuyBuddy Full-Stack E-Commerce preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">Full Stack Store</span>
               <span class="project-date-tag">05/2025</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">BuyBuddy</h3>
+              <div class="project-title-row">
+                <h3 class="project-title">BuyBuddy</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
               <p class="project-subtitle">Full-Stack E-Commerce Platform</p>
               <p class="project-description">
-                Developed a full-stack e-commerce web application with secure JWT authentication, dynamic product listings, cart, order management and an admin dashboard. Integrated Stripe for payments and Cloudinary for media storage, with deployment on Render.
+                Production-ready multi-vendor e-commerce platform with Stripe payment processing, Cloudinary media storage, cart management, and comprehensive administrative dashboards.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Stripe</span>
-                <span class="tech-tag">JWT</span>
+                <span class="tech-tag"><i class="uil uil-react"></i> React.js</span>
+                <span class="tech-tag"><i class="uil uil-code-branch"></i> Node.js</span>
+                <span class="tech-tag"><i class="uil uil-server"></i> Express.js</span>
+                <span class="tech-tag"><i class="uil uil-database"></i> MongoDB</span>
+                <span class="tech-tag"><i class="uil uil-credit-card"></i> Stripe</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://e-commerce-store-anqa.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -597,25 +772,37 @@
           </article>
 
           <!-- Project 3: Foodie Delivery Web App -->
-          <article class="project-card" data-category="web">
+          <article class="project-card" data-category="fullstack" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Spring Boot</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/Foodie express.png" alt="Foodie Delivery Web App preview" class="project-img">
-              <span class="project-category-tag">Spring Boot</span>
+              <img src="images/Foodie express.png" alt="Foodie Delivery Web App preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">Spring Boot &amp; MySQL</span>
               <span class="project-date-tag">04/2025</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">Foodie Delivery Web App</h3>
-              <p class="project-subtitle">Full-Stack Spring Boot Application</p>
+              <div class="project-title-row">
+                <h3 class="project-title">Foodie Delivery Web App</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">Full-Stack Food Ordering Platform</p>
               <p class="project-description">
-                Built a full-stack online food ordering system with a Spring Boot backend and HTML/CSS/JavaScript frontend. Implemented signup/login with JWT authentication, cart management, order placement and payment integration. Used MySQL for backend storage.
+                Online food ordering enterprise architecture with Spring Boot REST services, JWT authorization, shopping cart state management, and MySQL persistence.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">Spring Boot</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JWT</span>
+                <span class="tech-tag"><i class="uil uil-server"></i> Spring Boot</span>
+                <span class="tech-tag"><i class="uil uil-brackets-curly"></i> JavaScript</span>
+                <span class="tech-tag"><i class="uil uil-database"></i> MySQL</span>
+                <span class="tech-tag"><i class="uil uil-shield-check"></i> JWT</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://foodie-frontend-nkru.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -630,24 +817,38 @@
             </div>
           </article>
 
-          <!-- Project 4: E-Commerce Website (ShoeHaven) -->
-          <article class="project-card" data-category="web">
+          <!-- Project 4: ShoeHaven E-Commerce -->
+          <article class="project-card" data-category="web" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Node.js App</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/Shoehaven.png" alt="E-Commerce Website preview" class="project-img">
-              <span class="project-category-tag">Node.js</span>
+              <img src="images/Shoehaven.png" alt="E-Commerce Website preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">E-Commerce Storefront</span>
               <span class="project-date-tag">02/2025</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">E-commerce Website</h3>
+              <div class="project-title-row">
+                <h3 class="project-title">ShoeHaven E-Commerce</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
               <p class="project-subtitle">Node.js Storefront Platform</p>
               <p class="project-description">
-                Developed a complete e-commerce platform with product listing, shopping cart and payment functionality. Used Node.js and MongoDB for backend services and persistent storage, with secure login/signup and authentication.
+                Feature-rich retail storefront supporting dynamic catalog filtering, shopping cart checkout, and MongoDB database persistence.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">JWT</span>
+                <span class="tech-tag"><i class="uil uil-code-branch"></i> Node.js</span>
+                <span class="tech-tag"><i class="uil uil-server"></i> Express.js</span>
+                <span class="tech-tag"><i class="uil uil-database"></i> MongoDB</span>
+                <span class="tech-tag"><i class="uil uil-shield-check"></i> JWT</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://israveltech.github.io/Ecommerce-Website/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -663,23 +864,37 @@
           </article>
 
           <!-- Project 5: BuySellUnplugged -->
-          <article class="project-card" data-category="web">
+          <article class="project-card" data-category="web" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Marketplace</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/BuySellUnplugged.png" alt="BuySellUnplugged Marketplace preview" class="project-img">
-              <span class="project-category-tag">Marketplace</span>
+              <img src="images/BuySellUnplugged.png" alt="BuySellUnplugged Marketplace preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">Marketplace Portal</span>
               <span class="project-date-tag">Web App</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">BuySellUnplugged</h3>
-              <p class="project-subtitle">Product Trading Portal</p>
+              <div class="project-title-row">
+                <h3 class="project-title">BuySellUnplugged</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">Peer-to-Peer Trading Platform</p>
               <p class="project-description">
-                Online trading marketplace platform supporting product discovery, catalog listings, and responsive user flows with optimized frontend performance.
+                Community trading platform built with clean responsive interfaces, categorized listings, instant search, and optimized frontend assets.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag"><i class="uil uil-html5"></i> HTML5</span>
+                <span class="tech-tag"><i class="uil uil-css3-simple"></i> CSS3</span>
+                <span class="tech-tag"><i class="uil uil-brackets-curly"></i> JavaScript</span>
+                <span class="tech-tag"><i class="uil uil-cloud"></i> Vercel</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://buy-sell-unplugged.vercel.app/Premium_Users/productscreen.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -694,24 +909,130 @@
             </div>
           </article>
 
-          <!-- Project 6: Personal Portfolio -->
-          <article class="project-card" data-category="web">
+          <!-- Project 6: SwiftCart Mobile - React Native -->
+          <article class="project-card" data-category="mobile" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> React Native</span>
+            </div>
             <div class="project-image-box">
-              <img src="images/Portfolio.png" alt="Personal Portfolio Website preview" class="project-img">
-              <span class="project-category-tag">Portfolio</span>
+              <img src="images/Buybuddy.png" alt="SwiftCart Mobile React Native App preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Source Code</span>
+              </div>
+              <span class="project-category-tag">Cross-Platform App</span>
+              <span class="project-date-tag">Mobile App</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">SwiftCart Mobile</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">React Native E-Commerce App</p>
+              <p class="project-description">
+                Cross-platform mobile application with bottom-sheet cart checkout, local storage cache, instant category filters, and smooth gesture animations.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="uil uil-mobile-android-alt"></i> React Native</span>
+                <span class="tech-tag"><i class="uil uil-brackets-curly"></i> JavaScript</span>
+                <span class="tech-tag"><i class="uil uil-layer-group"></i> Redux Toolkit</span>
+                <span class="tech-tag"><i class="uil uil-exchange"></i> REST APIs</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/IsravelTECH" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Source Code</span>
+                  <i class="uil uil-code-branch btn-icon"></i>
+                </a>
+                <a href="https://github.com/IsravelTECH" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>GitHub</span>
+                  <i class="uil uil-github-alt btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: TrackEase Flutter App -->
+          <article class="project-card" data-category="mobile" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Flutter &amp; Dart</span>
+            </div>
+            <div class="project-image-box">
+              <img src="images/finalyearproject.png" alt="TrackEase Flutter Mobile App preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Source Code</span>
+              </div>
+              <span class="project-category-tag">Flutter Mobile App</span>
+              <span class="project-date-tag">Mobile App</span>
+            </div>
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3 class="project-title">TrackEase Mobile App</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">Real-Time Fleet &amp; Task Tracker</p>
+              <p class="project-description">
+                Flutter-powered fleet and task tracker with dynamic mapping, background polling, offline SQLite caching, and Material Design 3 components.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="uil uil-layer-group"></i> Flutter</span>
+                <span class="tech-tag"><i class="uil uil-bolt"></i> Dart</span>
+                <span class="tech-tag"><i class="uil uil-mobile-android-alt"></i> Material 3</span>
+                <span class="tech-tag"><i class="uil uil-exchange"></i> REST APIs</span>
+              </div>
+              <div class="project-card-footer">
+                <a href="https://github.com/IsravelTECH" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Source Code</span>
+                  <i class="uil uil-code-branch btn-icon"></i>
+                </a>
+                <a href="https://github.com/IsravelTECH" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <span>GitHub</span>
+                  <i class="uil uil-github-alt btn-icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Personal Portfolio Platform -->
+          <article class="project-card" data-category="web" data-tilt data-tilt-max="5" data-tilt-speed="400">
+            <div class="project-window-bar">
+              <div class="pw-dots">
+                <span class="pw-dot pw-red"></span>
+                <span class="pw-dot pw-yellow"></span>
+                <span class="pw-dot pw-green"></span>
+              </div>
+              <span class="pw-badge live-pulse"><span class="pw-pulse-dot"></span> Production App</span>
+            </div>
+            <div class="project-image-box">
+              <img src="images/Portfolio.png" alt="Personal Portfolio Website preview" class="project-img" loading="lazy">
+              <div class="project-overlay-view">
+                <span class="ov-text"><i class="uil uil-eye"></i> View Live App</span>
+              </div>
+              <span class="project-category-tag">Portfolio Platform</span>
               <span class="project-date-tag">Web App</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">Personal Portfolio</h3>
-              <p class="project-subtitle">Developer Portfolio Platform</p>
+              <div class="project-title-row">
+                <h3 class="project-title">Developer Portfolio Platform</h3>
+                <i class="uil uil-arrow-up-right project-title-arrow"></i>
+              </div>
+              <p class="project-subtitle">Modern High-Performance Portfolio</p>
               <p class="project-description">
-                High-performance developer portfolio featuring responsive design, automatic day/night theme, certificate lightbox, and EmailJS integration.
+                Engineered with modular Vanilla architecture, automatic day/night theme engine, certificate lightbox gallery, and EmailJS enquiry form integration.
               </p>
               <div class="project-tech-stack">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">EmailJS</span>
+                <span class="tech-tag"><i class="uil uil-html5"></i> HTML5</span>
+                <span class="tech-tag"><i class="uil uil-css3-simple"></i> CSS3</span>
+                <span class="tech-tag"><i class="uil uil-brackets-curly"></i> JavaScript</span>
+                <span class="tech-tag"><i class="uil uil-envelope"></i> EmailJS</span>
               </div>
               <div class="project-card-footer">
                 <a href="https://israveltech.github.io/My-Portfolio/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -753,7 +1074,7 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <h3 class="timeline-role">Software Developer Intern</h3>
-                <span class="timeline-date" id="technoSchoolDuration">Jun 2026 – Present</span>
+                <span class="timeline-date" id="technoSchoolDuration">Aug 2026 – Present</span>
               </div>
               <p class="timeline-org">TechnoSchool - ICT Education Redefined · Internship · Chennai, Tamil Nadu, India · On-site</p>
               <p style="font-size: 14px; color: var(--text-dark-secondary); margin-bottom: 12px; line-height: 1.65;">
@@ -866,7 +1187,7 @@
     </section>
 
     <!-- ==========================================================================
-         10. CERTIFICATION & ACHIEVEMENTS
+         10. CERTIFICATION & ACHIEVEMENTS (VERIFIED CREDENTIAL HUB)
          ========================================================================== -->
     <section class="section" id="certificates">
       <div class="container">
@@ -877,26 +1198,66 @@
           <div>
             <div class="section-header">
               <span class="section-tag">// 07 / CERTIFICATION</span>
-              <h2 class="section-title">Certification & Credentials</h2>
+              <h2 class="section-title">Certification &amp; Verified Credentials</h2>
               <p class="section-subtitle">
-                Verified credentials across full-stack development, core programming, internships, capstones, and optimization. Click to inspect.
+                Accredited certifications spanning Full Stack Engineering, Python Algorithms, Capstone Showcases, and Web Performance.
               </p>
             </div>
 
-            <div class="certificates-grid">
+            <!-- Verified Overview Badge Ribbon Strip -->
+            <div class="cert-overview-strip" aria-label="Credential Verification Summary">
+              <div class="cert-overview-item">
+                <i class="uil uil-award cert-overview-icon"></i>
+                <span><strong>7</strong> Verified Credentials</span>
+              </div>
+              <span class="cert-overview-dot">•</span>
+              <div class="cert-overview-item">
+                <i class="uil uil-shield-check cert-overview-icon"></i>
+                <span><strong>100%</strong> Industry Validated</span>
+              </div>
+              <span class="cert-overview-dot">•</span>
+              <div class="cert-overview-item">
+                <i class="uil uil-search-plus cert-overview-icon"></i>
+                <span>Click Any Credential to Inspect</span>
+              </div>
+            </div>
+
+            <!-- Mobile Swipe Navigation Toolbar (Visible on Mobile/Tablet) -->
+            <div class="cert-mobile-nav-bar">
+              <div class="cert-carousel-counter">
+                <span class="carousel-badge"><i class="uil uil-sliders-v-alt"></i> Swipe to Browse Credentials</span>
+              </div>
+              <div class="cert-carousel-btns">
+                <button class="cert-nav-arrow cert-nav-prev" id="certScrollPrev" aria-label="Previous Certificate">
+                  <i class="uil uil-angle-left-b"></i>
+                </button>
+                <button class="cert-nav-arrow cert-nav-next" id="certScrollNext" aria-label="Next Certificate">
+                  <i class="uil uil-angle-right-b"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="certificates-grid cert-carousel-track" id="certificatesTrack">
               
               <!-- 1. Full Stack Web Development -->
-              <div class="cert-card" data-index="0" title="Click to view full certificate">
+              <div class="cert-card" data-index="0" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Fullstack.jpg" alt="Full Stack Web Development Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-graduation-cap"></i> Professional Certification</span>
                   <h4 class="cert-title">Full Stack Web Development</h4>
-                  <span class="cert-category">Professional Certification</span>
+                  <p class="cert-meta-desc">React, Node.js, REST APIs &amp; Relational Databases</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -904,17 +1265,24 @@
               </div>
 
               <!-- 2. Python Programming -->
-              <div class="cert-card" data-index="1" title="Click to view full certificate">
+              <div class="cert-card" data-index="1" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Python.png" alt="Python Programming Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-server"></i> Core Python &amp; Algorithms</span>
                   <h4 class="cert-title">Python Programming</h4>
-                  <span class="cert-category">Core Python &amp; Algorithms</span>
+                  <p class="cert-meta-desc">Data Structures, Algorithms &amp; Scripting Workflows</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -922,17 +1290,24 @@
               </div>
 
               <!-- 3. Development Internship -->
-              <div class="cert-card" data-index="2" title="Click to view full certificate">
+              <div class="cert-card" data-index="2" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Internship.jpg" alt="Development Internship Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-briefcase-alt"></i> Practical Industry Training</span>
                   <h4 class="cert-title">Development Internship</h4>
-                  <span class="cert-category">Industry Practical Training</span>
+                  <p class="cert-meta-desc">Production Full-Stack Application Delivery</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -940,17 +1315,24 @@
               </div>
 
               <!-- 4. Hackathon Innovation -->
-              <div class="cert-card" data-index="3" title="Click to view full certificate">
+              <div class="cert-card" data-index="3" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Hackaton.jpg" alt="Hackathon Innovation Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-trophy"></i> Competitive Engineering</span>
                   <h4 class="cert-title">Hackathon Innovation</h4>
-                  <span class="cert-category">Competitive Problem Solving</span>
+                  <p class="cert-meta-desc">Rapid Prototyping &amp; Problem Resolution</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -958,17 +1340,24 @@
               </div>
 
               <!-- 5. Project Presentation -->
-              <div class="cert-card" data-index="4" title="Click to view full certificate">
+              <div class="cert-card" data-index="4" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Project.jpg" alt="Project Presentation Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-presentation-play"></i> Capstone Showcase</span>
                   <h4 class="cert-title">Project Presentation</h4>
-                  <span class="cert-category">Capstone Showcase</span>
+                  <p class="cert-meta-desc">System Architecture Defense &amp; Demo</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -976,17 +1365,24 @@
               </div>
 
               <!-- 6. Software Engineering Course -->
-              <div class="cert-card" data-index="5" title="Click to view full certificate">
+              <div class="cert-card" data-index="5" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/Course.jpg" alt="Software Engineering Course Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-book-reader"></i> Advanced Engineering</span>
                   <h4 class="cert-title">Software Engineering Course</h4>
-                  <span class="cert-category">Advanced Concepts</span>
+                  <p class="cert-meta-desc">SDLC, Clean Architecture &amp; Design Patterns</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -994,17 +1390,24 @@
               </div>
 
               <!-- 7. SEO & Web Visibility -->
-              <div class="cert-card" data-index="6" title="Click to view full certificate">
+              <div class="cert-card" data-index="6" data-tilt data-tilt-max="6" data-tilt-speed="400" title="Click to inspect full resolution certificate">
+                <div class="cert-verified-ribbon">
+                  <i class="uil uil-check-circle"></i>
+                  <span>Verified Credential</span>
+                </div>
                 <div class="cert-image-box">
                   <img src="images/SEO.png" alt="SEO & Web Visibility Certification" class="cert-img" loading="lazy">
-                  <div class="cert-overlay"><i class="uil uil-search-plus"></i></div>
+                  <div class="cert-overlay">
+                    <div class="cert-inspect-badge"><i class="uil uil-search-plus"></i> <span>Inspect</span></div>
+                  </div>
                 </div>
                 <div class="cert-info">
+                  <span class="cert-issuer-tag"><i class="uil uil-chart-growth"></i> Digital Optimization</span>
                   <h4 class="cert-title">SEO &amp; Web Visibility</h4>
-                  <span class="cert-category">Digital Optimization</span>
+                  <p class="cert-meta-desc">Performance Auditing, Speed &amp; Discovery</p>
                   <div class="cert-action-row">
                     <span class="btn btn-secondary btn-sm cert-btn">
-                      <span>View Certificate</span>
+                      <span>Inspect Credential</span>
                       <i class="uil uil-external-link-alt btn-icon"></i>
                     </span>
                   </div>
@@ -1012,6 +1415,10 @@
               </div>
 
             </div>
+
+            <!-- Mobile Pagination Dots Container -->
+            <div class="cert-mobile-dots" id="certMobileDots" aria-hidden="true"></div>
+
           </div>
 
         </div>
@@ -1053,8 +1460,20 @@
           
           <div class="ai-card">
             <div class="ai-card-icon"><i class="uil uil-code-branch"></i></div>
-            <h3 class="ai-card-title">Copilot &amp; Cursor</h3>
-            <p class="ai-card-desc">Rapid prototyping, intelligent context-aware code generation, and iterative boilerplate scaffolding.</p>
+            <h3 class="ai-card-title">GitHub Copilot</h3>
+            <p class="ai-card-desc">Rapid boilerplate generation, inline code completions, and AI-assisted algorithm synthesis.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon"><i class="uil uil-layer-group"></i></div>
+            <h3 class="ai-card-title">Cursor &amp; Composer</h3>
+            <p class="ai-card-desc">Multi-file context refactoring, terminal command synthesis, and codebase navigation.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon"><i class="uil uil-brain"></i></div>
+            <h3 class="ai-card-title">ChatGPT &amp; Claude</h3>
+            <p class="ai-card-desc">Architecture modeling, database schema sanity checks, and technical specification drafting.</p>
           </div>
 
           <div class="ai-card">
@@ -1065,14 +1484,26 @@
 
           <div class="ai-card">
             <div class="ai-card-icon"><i class="uil uil-file-check-alt"></i></div>
-            <h3 class="ai-card-title">Code Quality &amp; Tests</h3>
-            <p class="ai-card-desc">Generating automated test suites, edge-case coverage, and validating maintainability standards.</p>
+            <h3 class="ai-card-title">Code Review &amp; Quality</h3>
+            <p class="ai-card-desc">Static analysis, PR summary reviews, and enforcing modern clean code guidelines.</p>
           </div>
 
           <div class="ai-card">
-            <div class="ai-card-icon"><i class="uil uil-brain"></i></div>
-            <h3 class="ai-card-title">AI &amp; LLM APIs</h3>
-            <p class="ai-card-desc">Designing seamless prompt architectures and integrating intelligent endpoints into modern software.</p>
+            <div class="ai-card-icon"><i class="uil uil-shield-check"></i></div>
+            <h3 class="ai-card-title">API Testing &amp; Verification</h3>
+            <p class="ai-card-desc">Automated contract test generation, Postman mock generation, and edge-case validation.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon"><i class="uil uil-comment-alt-lines"></i></div>
+            <h3 class="ai-card-title">Prompt Engineering</h3>
+            <p class="ai-card-desc">Constructing structured Few-Shot prompts and JSON-schema output guards for reliable LLM integrations.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-icon"><i class="uil uil-palette"></i></div>
+            <h3 class="ai-card-title">UI Generation &amp; UX</h3>
+            <p class="ai-card-desc">Wireframing accessible components, CSS micro-animation designs, and responsive layouts.</p>
           </div>
 
         </div>
@@ -1081,22 +1512,22 @@
     </section>
 
     <!-- ==========================================================================
-         12. CONTACT SECTION
+         12. CONTACT / PREMIUM ENQUIRY SECTION
          ========================================================================== -->
-    <section class="section" id="contact">
+    <section class="section contact-section" id="contact">
       <div class="container">
         
         <div class="section-header">
           <span class="section-tag">// 09 / GET IN TOUCH</span>
-          <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+          <h2 class="section-title">Let's Build Something Amazing Together</h2>
           <p class="section-subtitle">
-            I am open to full-time software engineering roles, team contributions, and technical projects.
+            Tell me about your project, and I'll get back to you within 24 hours.
           </p>
         </div>
 
         <div class="contact-grid">
           
-          <!-- Left: Contact Details -->
+          <!-- Left: Contact Details & Fast Reach Out -->
           <div class="contact-info-column">
             
             <div class="contact-info-card">
@@ -1149,29 +1580,74 @@
               </div>
             </div>
 
+            <!-- Response Guarantee Badge -->
+            <div class="contact-guarantee-badge">
+              <i class="uil uil-clock-three"></i>
+              <span>Guaranteed response within <strong>24 hours</strong></span>
+            </div>
+
           </div>
 
-          <!-- Right: EmailJS Contact Form -->
-          <div class="contact-form-card">
-            <form id="contact-form" class="contact-form">
+          <!-- Right: Premium Glassmorphism Enquiry Form -->
+          <div class="contact-form-card enquiry-form-card">
+            <!-- Animated Background Glows & Particles inside Card -->
+            <div class="enquiry-bg-glow"></div>
+            <div class="enquiry-particles-container" aria-hidden="true">
+              <span class="enquiry-particle ep-1"></span>
+              <span class="enquiry-particle ep-2"></span>
+              <span class="enquiry-particle ep-3"></span>
+              <span class="enquiry-particle ep-4"></span>
+            </div>
+
+            <form id="contact-form" class="contact-form enquiry-form" novalidate>
               <div class="form-group-row">
-                <div class="form-group">
-                  <label for="user_name" class="form-label">Your Name</label>
-                  <input type="text" id="user_name" name="user_name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                <!-- Full Name (Required) -->
+                <div class="form-group floating-group">
+                  <div class="input-wrapper">
+                    <input type="text" id="user_name" name="user_name" class="form-input floating-input" placeholder=" " required autocomplete="name">
+                    <label for="user_name" class="floating-label">Full Name <span class="req-star">*</span></label>
+                    <i class="uil uil-user input-icon"></i>
+                  </div>
+                  <span class="field-error-msg" id="name-error"></span>
                 </div>
-                <div class="form-group">
-                  <label for="user_email" class="form-label">Your Email</label>
-                  <input type="email" id="user_email" name="user_email" class="form-input" placeholder="e.g. alex@example.com" required>
+
+                <!-- Email Address (Required) -->
+                <div class="form-group floating-group">
+                  <div class="input-wrapper">
+                    <input type="email" id="user_email" name="user_email" class="form-input floating-input" placeholder=" " required autocomplete="email">
+                    <label for="user_email" class="floating-label">Email Address <span class="req-star">*</span></label>
+                    <i class="uil uil-envelope-alt input-icon"></i>
+                  </div>
+                  <span class="field-error-msg" id="email-error"></span>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="message" class="form-label">Your Message</label>
-                <textarea id="message" name="message" class="form-textarea" placeholder="Describe your project, team opportunity, or inquiry..." required></textarea>
+              <!-- Phone Number (Optional) -->
+              <div class="form-group floating-group">
+                <div class="input-wrapper">
+                  <input type="tel" id="phone_number" name="phone_number" class="form-input floating-input" placeholder=" " autocomplete="tel">
+                  <label for="phone_number" class="floating-label">Phone Number (Optional)</label>
+                  <i class="uil uil-phone input-icon"></i>
+                </div>
+                <span class="field-error-msg" id="phone-error"></span>
               </div>
 
-              <button type="submit" class="btn btn-primary">
-                <span>Send Message</span>
+              <!-- Message (Textarea, Required) -->
+              <div class="form-group floating-group">
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" class="form-textarea floating-input" placeholder=" " required minlength="10"></textarea>
+                  <label for="message" class="floating-label">Your Message / Enquiry <span class="req-star">*</span></label>
+                  <i class="uil uil-comment-alt-lines input-icon textarea-icon"></i>
+                </div>
+                <div class="field-meta-row">
+                  <span class="field-error-msg" id="message-error"></span>
+                  <span class="char-counter" id="message-char-counter">0 / 10 min</span>
+                </div>
+              </div>
+
+              <!-- Submit CTA Button -->
+              <button type="submit" class="btn btn-primary enquiry-submit-btn" id="enquirySubmitBtn">
+                <span class="btn-text">Send Enquiry</span>
                 <i class="uil uil-message btn-icon"></i>
               </button>
             </form>
@@ -1231,6 +1707,12 @@
   <!-- ==========================================================================
        SCRIPTS & SDKs
        ========================================================================== -->
+  <!-- GSAP for High-Performance Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Vanilla Tilt for 3D Micro-Interactions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
   <!-- Typed.js for typewriter rotation -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
