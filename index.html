@@ -1540,13 +1540,53 @@
               </div>
             </div>
 
+            <!-- Dedicated WhatsApp Card -->
+            <div class="contact-info-card contact-whatsapp-card">
+              <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="contact-whatsapp-link-wrapper"
+                 aria-label="Chat with Isravel on WhatsApp">
+                <div class="contact-icon-box whatsapp-icon-box">
+                  <i class="uil uil-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <div class="contact-header-flex">
+                    <h4>WhatsApp</h4>
+                    <span class="wa-live-badge"><span class="wa-dot"></span> Online</span>
+                  </div>
+                  <span class="contact-highlight-phone">+91 81244 73373</span>
+                  <p class="contact-wa-subtext">Click to chat &bull; Discuss business website &amp; enquiries</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Phone Card -->
             <div class="contact-info-card">
               <div class="contact-icon-box">
                 <i class="uil uil-phone"></i>
               </div>
               <div class="contact-details">
                 <h4>Phone</h4>
-                <a href="tel:+918124473373">+91 81244 73373</a>
+                <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   title="Click to send WhatsApp message" 
+                   class="phone-wa-link">
+                   +91 81244 73373
+                </a>
+                <div class="contact-card-subactions">
+                  <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="subaction-link wa-subaction">
+                    <i class="uil uil-whatsapp"></i> WhatsApp
+                  </a>
+                  <span class="subaction-sep">&bull;</span>
+                  <a href="tel:+918124473373" class="subaction-link call-subaction">
+                    <i class="uil uil-phone-alt"></i> Call
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1645,11 +1685,28 @@
                 </div>
               </div>
 
-              <!-- Submit CTA Button -->
-              <button type="submit" class="btn btn-primary enquiry-submit-btn" id="enquirySubmitBtn">
-                <span class="btn-text">Send Enquiry</span>
-                <i class="uil uil-message btn-icon"></i>
-              </button>
+              <!-- Form Action Buttons -->
+              <div class="form-actions-stack">
+                <button type="submit" class="btn btn-primary enquiry-submit-btn" id="enquirySubmitBtn">
+                  <span class="btn-text">Send Enquiry</span>
+                  <i class="uil uil-message btn-icon"></i>
+                </button>
+
+                <!-- Fast-Track WhatsApp Option -->
+                <div class="form-or-divider">
+                  <span>OR FAST-TRACK VIA WHATSAPP</span>
+                </div>
+
+                <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-whatsapp-direct" 
+                   id="formWhatsappBtn"
+                   aria-label="Discuss on WhatsApp">
+                  <i class="uil uil-whatsapp btn-icon"></i>
+                  <span>Discuss Business Website on WhatsApp</span>
+                </a>
+              </div>
             </form>
           </div>
 
@@ -1664,6 +1721,25 @@
   <button id="backToTop" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
     <i class="uil uil-arrow-up"></i>
   </button>
+
+  <!-- Floating WhatsApp Quick Connect Button -->
+  <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." 
+     id="floatingWhatsApp" 
+     class="floating-whatsapp-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp" 
+     title="Chat with me on WhatsApp">
+    <span class="wa-ripple-ring" aria-hidden="true"></span>
+    <span class="wa-online-dot" aria-hidden="true"></span>
+    <svg class="wa-icon-svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" width="28" height="28">
+      <path d="M16.01 2.002c-7.72 0-14 6.275-14 13.992 0 2.47.643 4.88 1.865 7.004l-1.98 7.234 7.414-1.944a13.93 13.93 0 0 0 6.701 1.696h.006c7.717 0 13.996-6.275 13.996-13.994 0-3.738-1.455-7.25-4.1-9.896s-6.155-4.096-9.902-4.096zm8.17 19.824c-.34.957-1.7 1.838-2.766 2.067-.73.156-1.684.28-4.896-1.05-4.108-1.701-6.757-5.877-6.962-6.15-.205-.274-1.666-2.217-1.666-4.228 0-2.012 1.054-3.003 1.428-3.414.375-.411.818-.514 1.09-.514.273 0 .546.003.784.015.25.012.585-.095.914.697.34.819 1.159 2.83 1.261 3.037.102.206.17.447.034.72-.136.273-.205.443-.408.682-.205.239-.43.533-.615.716-.205.204-.418.426-.18.835.239.409 1.062 1.752 2.278 2.835 1.564 1.393 2.883 1.825 3.292 2.029.41.205.648.171.887-.102.239-.273 1.023-1.194 1.296-1.603.273-.409.546-.341.92-.204.375.136 2.386 1.125 2.795 1.33.41.205.682.307.784.478.102.17.102.99-.239 1.947z"/>
+    </svg>
+    <span class="floating-wa-tooltip">
+      <strong>Chat on WhatsApp</strong>
+      <small>Typically replies instantly</small>
+    </span>
+  </a>
 
   <!-- ==========================================================================
        13. UNIFIED MINIMAL PREMIUM FOOTER (CENTERED & LIGHT THEMED)
@@ -1688,6 +1764,10 @@
         <a href="https://www.linkedin.com/in/isravel-s-3a74712a2/" target="_blank" rel="noopener noreferrer" class="footer-social-pill" aria-label="LinkedIn">
           <i class="uil uil-linkedin-alt"></i>
           <span>LinkedIn</span>
+        </a>
+        <a href="https://wa.me/918124473373?text=Hi%2C%20I%20want%20to%20discuss%20about%20my%20business%20website%20and%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="footer-social-pill footer-wa-pill" aria-label="WhatsApp">
+          <i class="uil uil-whatsapp"></i>
+          <span>WhatsApp</span>
         </a>
         <a href="mailto:israveltech@gmail.com" class="footer-social-pill" aria-label="Email">
           <i class="uil uil-envelope-alt"></i>

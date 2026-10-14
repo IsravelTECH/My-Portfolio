@@ -626,6 +626,34 @@ document.addEventListener('DOMContentLoaded', () => {
     emailjs.init('Xme14b3NE9dsk36kv');
   }
 
+  /* ==========================================================================
+     WHATSAPP INTEGRATION & DYNAMIC MESSAGE BUILDER
+     ========================================================================== */
+  const formWhatsappBtn = document.getElementById('formWhatsappBtn');
+  const baseWaNumber = '918124473373';
+  const defaultWaMsg = 'Hi, I want to discuss about my business website and enquire about your services.';
+
+  const updateWhatsAppLinks = () => {
+    if (!formWhatsappBtn) return;
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+    const msgVal = messageTextarea ? messageTextarea.value.trim() : '';
+
+    let compiledMsg = defaultWaMsg;
+    if (nameVal && msgVal) {
+      compiledMsg = `Hi Isravel, I am ${nameVal}. I want to discuss about my business website: ${msgVal}`;
+    } else if (msgVal) {
+      compiledMsg = `Hi, I want to discuss about my business website: ${msgVal}`;
+    } else if (nameVal) {
+      compiledMsg = `Hi Isravel, I am ${nameVal}. I want to discuss about my business website and enquire about your services.`;
+    }
+
+    formWhatsappBtn.href = `https://wa.me/${baseWaNumber}?text=${encodeURIComponent(compiledMsg)}`;
+  };
+
+  if (nameInput) nameInput.addEventListener('input', updateWhatsAppLinks);
+  if (messageTextarea) messageTextarea.addEventListener('input', updateWhatsAppLinks);
+  updateWhatsAppLinks();
+
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -696,6 +724,7 @@ document.addEventListener('DOMContentLoaded', () => {
           charCounter.textContent = '0 / 10 min';
           charCounter.classList.remove('valid');
         }
+        updateWhatsAppLinks();
       };
 
       if (typeof emailjs !== 'undefined') {
