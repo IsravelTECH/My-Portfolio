@@ -209,6 +209,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
+  const updateProjectCounts = () => {
+    filterBtns.forEach(btn => {
+      const filter = btn.getAttribute('data-filter');
+      const countElem = btn.querySelector('.filter-count');
+      if (!countElem) return;
+      if (filter === 'all') {
+        countElem.textContent = projectCards.length;
+      } else {
+        const matching = Array.from(projectCards).filter(c => {
+          const cats = (c.getAttribute('data-category') || '').split(' ');
+          return cats.includes(filter);
+        });
+        countElem.textContent = matching.length;
+      }
+    });
+  };
+  updateProjectCounts();
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -217,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const filterValue = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        const shouldShow = filterValue === 'all' || cardCategory === filterValue;
+        const cardCategories = (card.getAttribute('data-category') || '').split(' ');
+        const shouldShow = filterValue === 'all' || cardCategories.includes(filterValue);
 
         if (shouldShow) {
           card.style.display = 'flex';
@@ -238,31 +256,188 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  /* ==========================================================================
+     ACETERNITY-STYLE MOUSE-TRACKING SPOTLIGHT GLOW
+     ========================================================================== */
+  const projectGridElem = document.getElementById('projectsGrid');
+  if (projectGridElem) {
+    projectCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
+
+  /* ==========================================================================
+     TECH STACK CHIP CROSS-ILLUMINATION
+     ========================================================================== */
+  const techTags = document.querySelectorAll('.project-card .tech-tag[data-tech]');
+  techTags.forEach(tag => {
+    tag.addEventListener('mouseenter', () => {
+      const techKey = tag.getAttribute('data-tech');
+      if (!techKey) return;
+
+      projectCards.forEach(card => {
+        const cardTechs = (card.getAttribute('data-tech') || '').split(' ');
+        if (cardTechs.includes(techKey)) {
+          card.classList.add('tech-highlight');
+          card.classList.remove('tech-dimmed');
+        } else {
+          card.classList.add('tech-dimmed');
+          card.classList.remove('tech-highlight');
+        }
+      });
+    });
+
+    tag.addEventListener('mouseleave', () => {
+      projectCards.forEach(card => {
+        card.classList.remove('tech-highlight', 'tech-dimmed');
+      });
+    });
+  });
+
+  /* ==========================================================================
+     STUDIO VIEW MODE SWITCHER (GRID VS. SPOTLIGHT STUDIO)
+     ========================================================================== */
+  const viewModeGridBtn = document.getElementById('viewModeGrid');
+  const viewModeSpotlightBtn = document.getElementById('viewModeSpotlight');
+
+  if (viewModeGridBtn && viewModeSpotlightBtn && projectGridElem) {
+    viewModeGridBtn.addEventListener('click', () => {
+      viewModeGridBtn.classList.add('active');
+      viewModeSpotlightBtn.classList.remove('active');
+      projectGridElem.classList.remove('spotlight-mode');
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('.project-card', 
+          { opacity: 0, scale: 0.98 },
+          { opacity: 1, scale: 1, duration: 0.3, stagger: 0.04, ease: 'power2.out' }
+        );
+      }
+    });
+
+    viewModeSpotlightBtn.addEventListener('click', () => {
+      viewModeSpotlightBtn.classList.add('active');
+      viewModeGridBtn.classList.remove('active');
+      projectGridElem.classList.add('spotlight-mode');
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo('.project-card', 
+          { opacity: 0, y: 15 },
+          { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: 'power2.out' }
+        );
+      }
+    });
+  }
+
+  /* ==========================================================================
+     PROJECT QUICK INSPECT SLIDE-OUT DRAWER
+     ========================================================================== */
+  const projectInspectDrawer = document.getElementById('projectInspectDrawer');
+  const pidBackdrop = document.getElementById('pidBackdrop');
+  const pidCloseBtn = document.getElementById('pidCloseBtn');
+  const pidCategoryBadge = document.getElementById('pidCategoryBadge');
+  const pidTitle = document.getElementById('pidTitle');
+  const pidSubtitle = document.getElementById('pidSubtitle');
+  const pidDescription = document.getElementById('pidDescription');
+  const pidImg = document.getElementById('pidImg');
+  const pidTechStack = document.getElementById('pidTechStack');
+  const pidActionsRow = document.getElementById('pidActionsRow');
+  const pidTriggers = document.querySelectorAll('.pid-trigger-btn');
+
+  const openProjectInspector = (card) => {
+    if (!card || !projectInspectDrawer) return;
+
+    const title = card.querySelector('.project-title')?.textContent || 'Project Details';
+    const subtitle = card.querySelector('.project-subtitle')?.textContent || '';
+    const description = card.querySelector('.project-description')?.textContent || '';
+    const categoryTag = card.querySelector('.project-category-tag')?.textContent || 'Project';
+    const img = card.querySelector('.project-img')?.src || '';
+    const techChips = card.querySelectorAll('.project-tech-stack .tech-tag');
+    const footerActions = card.querySelectorAll('.project-card-footer a, .project-card-footer button');
+
+    if (pidTitle) pidTitle.textContent = title;
+    if (pidSubtitle) pidSubtitle.textContent = subtitle;
+    if (pidDescription) pidDescription.textContent = description;
+    if (pidCategoryBadge) pidCategoryBadge.textContent = categoryTag;
+    if (pidImg) {
+      pidImg.src = img;
+      pidImg.alt = title;
+    }
+
+    if (pidTechStack) {
+      pidTechStack.innerHTML = '';
+      techChips.forEach(chip => {
+        const clone = chip.cloneNode(true);
+        pidTechStack.appendChild(clone);
+      });
+    }
+
+    if (pidActionsRow) {
+      pidActionsRow.innerHTML = '';
+      footerActions.forEach(action => {
+        if (action.classList.contains('pid-trigger-btn')) return;
+        const clone = action.cloneNode(true);
+        pidActionsRow.appendChild(clone);
+      });
+    }
+
+    projectInspectDrawer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeProjectInspector = () => {
+    if (projectInspectDrawer) {
+      projectInspectDrawer.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  pidTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest('.project-card');
+      openProjectInspector(card);
+    });
+  });
+
+  if (pidCloseBtn) pidCloseBtn.addEventListener('click', closeProjectInspector);
+  if (pidBackdrop) pidBackdrop.addEventListener('click', closeProjectInspector);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectInspectDrawer && projectInspectDrawer.classList.contains('active')) {
+      closeProjectInspector();
+    }
+  });
+
   /* ==========================================================================
      8. DYNAMIC EXPERIENCE DURATION CALCULATION
      ========================================================================== */
   const updateExperienceDuration = () => {
-    const durationElem = document.getElementById('technoSchoolDuration');
-    if (!durationElem) return;
+    const devDurationElem = document.getElementById('technoSchoolDevDuration');
+    if (devDurationElem) {
+      // Permanent Software Developer start date: November 1, 2026 (Month is 10 in JS: 0=Jan ... 10=Nov)
+      const startDate = new Date(2026, 10, 1);
+      const currentDate = new Date();
 
-    // Start date: June 15, 2026
-    const startDate = new Date(2026, 5, 15); // Month is 0-indexed: 5 = June
-    const currentDate = new Date();
+      let totalMonths = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth());
+      
+      // Adjust if current day hasn't reached start day
+      if (currentDate.getDate() < startDate.getDate() && totalMonths > 0) {
+        totalMonths--;
+      }
 
-    let totalMonths = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + (currentDate.getMonth() - startDate.getMonth());
-    
-    // Check if the current day has reached or passed the start day
-    if (currentDate.getDate() < startDate.getDate() && totalMonths > 0) {
-      totalMonths--;
+      if (totalMonths < 1) {
+        totalMonths = 1;
+      }
+
+      const monthLabel = totalMonths === 1 ? '1 mo' : `${totalMonths} mos`;
+      devDurationElem.textContent = `Nov 2026 – Present · ${monthLabel}`;
     }
-
-    // Ensure minimum 1 month if currently ongoing
-    if (totalMonths < 1) {
-      totalMonths = 1;
-    }
-
-    const monthLabel = totalMonths === 1 ? '1 mo' : `${totalMonths} mos`;
-    durationElem.textContent = `Aug 2026 – Present · ${monthLabel}`;
   };
 
   updateExperienceDuration();
@@ -281,37 +456,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const certificatesData = [
     {
-      src: 'images/Fullstack.jpg',
+      src: 'images/Certificates/Fullstack.jpg',
       title: 'Full Stack Web Development',
       category: 'Professional Certification'
     },
     {
-      src: 'images/Python.png',
+      src: 'images/Certificates/Python.png',
       title: 'Python Programming',
       category: 'Core Python & Algorithms'
     },
     {
-      src: 'images/Internship.jpg',
+      src: 'images/Certificates/Internship.jpg',
       title: 'Development Internship',
       category: 'Industry Practical Training'
     },
     {
-      src: 'images/Hackaton.jpg',
+      src: 'images/Certificates/Hackaton.jpg',
       title: 'Hackathon Innovation',
       category: 'Competitive Problem Solving'
     },
     {
-      src: 'images/Project.jpg',
+      src: 'images/Certificates/Project.jpg',
       title: 'Project Presentation',
       category: 'Capstone Showcase'
     },
     {
-      src: 'images/Course.jpg',
+      src: 'images/Certificates/Course.jpg',
       title: 'Software Engineering Course',
       category: 'Advanced Concepts'
     },
     {
-      src: 'images/SEO.png',
+      src: 'images/Certificates/SEO.png',
       title: 'SEO & Web Visibility',
       category: 'Digital Optimization'
     }
