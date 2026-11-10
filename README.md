@@ -93,7 +93,7 @@
 
 | Project | Platform / Type | Tech Stack | Live | Source Code |
 | :--- | :--- | :--- | :---: | :---: |
-| **ParkMe** | Smart Parking System (Web, Android APK & Desktop) | React, Leaflet, Node.js, Express, MongoDB | [Live](https://parkme-six.vercel.app/) • [APK](https://drive.google.com/file/d/19TFaPYX31nO-BIBwVT8Ewcjr5UnfdPDM/view?usp=sharing) | [GitHub](https://github.com/IsravelTECH) |
+| **ParkMe** | Smart Parking System (Web, Mobile & Desktop) | React, Leaflet, Node.js, Express, MongoDB | [Live](https://parkme-six.vercel.app/) | [GitHub](https://github.com/IsravelTECH) |
 | **BuyBuddy** | Full-Stack Multi-Vendor E-Commerce Suite (Web & Mobile) | React.js, React Native, Node.js, MongoDB, Stripe | [Live](https://e-commerce-store-anqa.onrender.com/) | [GitHub](https://github.com/IsravelTECH) |
 | **Foodie Express** | On-Demand Food Delivery Platform | React, Vite, Node.js, Express, MongoDB, Stripe | [Live](https://foodie-express-delivery-seven.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Foodie-Express-Frontend) |
 | **ShoeHaven 3D** | 3D Interactive Footwear & E-Commerce Website | Three.js / 3D, WebGL, React.js, JavaScript, Vercel | [Live](https://shoe-haven-delta.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Shoe-Haven) |
