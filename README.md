@@ -2,7 +2,7 @@
 
 # 🌐 ISRAVEL S — Modern Tech Developer Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-israveltech.github.io-0ea5e9?style=for-the-badge&logo=googlechrome&logoColor=white)](https://israveltech.github.io/My-Portfolio/)
+[![Live](https://img.shields.io/badge/Live-israveltech.github.io-0ea5e9?style=for-the-badge&logo=googlechrome&logoColor=white)](https://israveltech.github.io/My-Portfolio/)
 [![GitHub Profile](https://img.shields.io/badge/GitHub-IsravelTECH-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/IsravelTECH)
 [![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg?style=for-the-badge)](LICENSE)
 [![Status: Online](https://img.shields.io/badge/Status-Online%20%2F%20Available-10b981?style=for-the-badge&logo=statuspage&logoColor=white)](https://israveltech.github.io/My-Portfolio/)
@@ -91,15 +91,15 @@
 
 ## 💻 Featured Projects
 
-| Project | Platform / Type | Tech Stack | Live Demo | Source Code |
+| Project | Platform / Type | Tech Stack | Live | Source Code |
 | :--- | :--- | :--- | :---: | :---: |
-| **ParkMe** | Smart Parking System (Web, Android APK & Desktop) | React, Leaflet, Node.js, Express, MongoDB | [Live Web](https://park-me.onrender.com/) • [APK](https://drive.google.com/file/d/19TFaPYX31nO-BIBwVT8Ewcjr5UnfdPDM/view?usp=sharing) | [GitHub](https://github.com/IsravelTECH) |
-| **BuyBuddy** | Full-Stack Multi-Vendor E-Commerce Suite (Web & Mobile) | React.js, React Native, Node.js, MongoDB, Stripe | [Live Store](https://e-commerce-store-anqa.onrender.com/) | [GitHub](https://github.com/IsravelTECH) |
-| **Foodie Express** | On-Demand Food Delivery Platform | React, Vite, Node.js, Express, MongoDB, Stripe | [Live App](https://foodie-express-delivery-seven.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Foodie-Express-Frontend) |
-| **ShoeHaven 3D** | 3D Interactive Footwear & E-Commerce Website | Three.js / 3D, WebGL, React.js, JavaScript, Vercel | [Live 3D Demo](https://shoe-haven-delta.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Shoe-Haven) |
-| **BuySellUnplugged** | 3D Interactive Marketplace & Trading Platform | Three.js, WebGL, JavaScript, Node.js, Render | [Live 3D Demo](https://buysellunplugged.onrender.com/) | [GitHub](https://github.com/IsravelTECH/Buy-Sell) |
-| **SwiftCart Mobile** | Cross-Platform Mobile Shopping Application | React Native, Redux Toolkit, REST APIs | [App Showcase](#) | [GitHub](https://github.com/IsravelTECH) |
-| **Professional Portfolio** | High-Performance Responsive Multi-Device Portfolio | HTML5, CSS3 Architecture, Vanilla JS, EmailJS | [Live Portfolio](https://israveltech.github.io/My-Portfolio/) | [GitHub](https://github.com/IsravelTECH/My-Portfolio) |
+| **ParkMe** | Smart Parking System (Web, Android APK & Desktop) | React, Leaflet, Node.js, Express, MongoDB | [Live](https://parkme-six.vercel.app/) • [APK](https://drive.google.com/file/d/19TFaPYX31nO-BIBwVT8Ewcjr5UnfdPDM/view?usp=sharing) | [GitHub](https://github.com/IsravelTECH) |
+| **BuyBuddy** | Full-Stack Multi-Vendor E-Commerce Suite (Web & Mobile) | React.js, React Native, Node.js, MongoDB, Stripe | [Live](https://e-commerce-store-anqa.onrender.com/) | [GitHub](https://github.com/IsravelTECH) |
+| **Foodie Express** | On-Demand Food Delivery Platform | React, Vite, Node.js, Express, MongoDB, Stripe | [Live](https://foodie-express-delivery-seven.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Foodie-Express-Frontend) |
+| **ShoeHaven 3D** | 3D Interactive Footwear & E-Commerce Website | Three.js / 3D, WebGL, React.js, JavaScript, Vercel | [Live](https://shoe-haven-delta.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Shoe-Haven) |
+| **BuySellUnplugged** | 3D Interactive Marketplace & Trading Platform | Three.js, WebGL, JavaScript, Node.js, Render | [Live](https://buysellunplugged.onrender.com/) | [GitHub](https://github.com/IsravelTECH/Buy-Sell) |
+| **SwiftCart Mobile** | Cross-Platform Mobile Shopping Application | React Native, Redux Toolkit, REST APIs | [Showcase](#) | [GitHub](https://github.com/IsravelTECH) |
+| **Professional Portfolio** | High-Performance Responsive Multi-Device Portfolio | HTML5, CSS3 Architecture, Vanilla JS, EmailJS | [Live](https://israveltech.github.io/My-Portfolio/) | [GitHub](https://github.com/IsravelTECH/My-Portfolio) |
 
 ---
 
