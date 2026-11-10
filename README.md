@@ -98,7 +98,6 @@
 | **Foodie Express** | On-Demand Food Delivery Platform | React, Vite, Node.js, Express, MongoDB, Stripe | [Live](https://foodie-express-delivery-seven.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Foodie-Express-Frontend) |
 | **ShoeHaven 3D** | 3D Interactive Footwear & E-Commerce Website | Three.js / 3D, WebGL, React.js, JavaScript, Vercel | [Live](https://shoe-haven-delta.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Shoe-Haven) |
 | **BuySellUnplugged** | 3D Interactive Marketplace & Trading Platform | Three.js, WebGL, JavaScript, Node.js, Render | [Live](https://buysellunplugged.onrender.com/) | [GitHub](https://github.com/IsravelTECH/Buy-Sell) |
-| **SwiftCart Mobile** | Cross-Platform Mobile Shopping Application | React Native, Redux Toolkit, REST APIs | [Showcase](#) | [GitHub](https://github.com/IsravelTECH) |
 | **Professional Portfolio** | High-Performance Responsive Multi-Device Portfolio | HTML5, CSS3 Architecture, Vanilla JS, EmailJS | [Live](https://israveltech.github.io/My-Portfolio/) | [GitHub](https://github.com/IsravelTECH/My-Portfolio) |
 
 ---
