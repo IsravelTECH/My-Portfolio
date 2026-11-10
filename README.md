@@ -49,7 +49,7 @@
   - Slide-out architectural inspector drawer providing deep-dive overviews, technology stacks, live deployments, and repository links without page reloads.
 
 - **🕶️ 3D Interactive Project Showcases**:
-  - Dedicated support and categorization for 3D Web applications built with **Three.js** and **WebGL** (e.g., *ShoeHaven 3D* & *BuySellUnplugged 3D*).
+  - Dedicated support and categorization for 3D Web applications built with **Three.js** and **WebGL** (e.g., *ShoeHaven 3D* & *Buy & Sell 3D*).
 
 - **📜 Certificate Lightbox Gallery**:
   - Interactive full-screen credential viewer with keyboard navigation (`Esc`, `←`, `→`).
@@ -94,10 +94,10 @@
 | Project | Platform / Type | Tech Stack | Live | Source Code |
 | :--- | :--- | :--- | :---: | :---: |
 | **ParkMe** | Smart Parking System (Web, Mobile & Desktop) | React, Leaflet, Node.js, Express, MongoDB | [Live](https://parkme-six.vercel.app/) | [GitHub](https://github.com/IsravelTECH) |
-| **BuyBuddy** | Full-Stack Multi-Vendor E-Commerce Suite (Web & Mobile) | React.js, React Native, Node.js, MongoDB, Stripe | [Live](https://e-commerce-store-anqa.onrender.com/) | [GitHub](https://github.com/IsravelTECH) |
+| **BuyBuddy** | Full-Stack Multi-Vendor E-Commerce Suite (Web & Mobile) | React.js, React Native, Node.js, MongoDB, Stripe | [Live](https://e-commerce-store-anqa.onrender.com/) | [GitHub](https://github.com/IsravelTECH/BuyBuddy) |
 | **Foodie Express** | On-Demand Food Delivery Platform | React, Vite, Node.js, Express, MongoDB, Stripe | [Live](https://foodie-express-delivery-seven.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Foodie-Express-Frontend) |
 | **ShoeHaven 3D** | 3D Interactive Footwear & E-Commerce Website | Three.js / 3D, WebGL, React.js, JavaScript, Vercel | [Live](https://shoe-haven-delta.vercel.app/) | [GitHub](https://github.com/IsravelTECH/Shoe-Haven) |
-| **BuySellUnplugged** | 3D Interactive Marketplace & Trading Platform | Three.js, WebGL, JavaScript, Node.js, Render | [Live](https://buysellunplugged.onrender.com/) | [GitHub](https://github.com/IsravelTECH/Buy-Sell) |
+| **Buy & Sell** | 3D Interactive Marketplace & Trading Platform | Three.js, WebGL, JavaScript, Node.js, Render | [Live](https://buysellunplugged.onrender.com/) | [GitHub](https://github.com/IsravelTECH/Buy-Sell) |
 | **Professional Portfolio** | High-Performance Responsive Multi-Device Portfolio | HTML5, CSS3 Architecture, Vanilla JS, EmailJS | [Live](https://israveltech.github.io/My-Portfolio/) | [GitHub](https://github.com/IsravelTECH/My-Portfolio) |
 
 ---
