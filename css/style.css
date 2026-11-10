@@ -2637,7 +2637,7 @@ button:disabled,
 /* Interactive Spotlight Studio Layout */
 .projects-grid.spotlight-mode {
   grid-template-columns: 1fr;
-  max-width: 980px;
+  max-width: 1040px;
   margin-inline: auto;
   gap: 32px;
 }
@@ -2646,6 +2646,7 @@ button:disabled,
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   min-height: 420px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .projects-grid.spotlight-mode .project-window-bar {
@@ -2655,6 +2656,184 @@ button:disabled,
 .projects-grid.spotlight-mode .project-image-box {
   height: 100%;
   min-height: 380px;
+  position: relative;
+}
+
+.projects-grid.spotlight-mode .project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Spotlight Mode Responsive: Tablet & Mobile Full-Width Stack */
+@media screen and (max-width: 900px) {
+  .projects-grid.spotlight-mode {
+    gap: 24px;
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
+  .projects-grid.spotlight-mode .project-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+    height: auto !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .projects-grid.spotlight-mode .project-window-bar {
+    width: 100% !important;
+    grid-column: unset !important;
+    padding: 9px 14px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-image-box {
+    width: 100% !important;
+    height: 230px !important;
+    min-height: 230px !important;
+    max-height: 250px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .projects-grid.spotlight-mode .project-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+  }
+
+  .projects-grid.spotlight-mode .project-body {
+    width: 100% !important;
+    padding: 20px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card-footer .btn {
+    flex: 1 !important;
+    min-height: 38px !important;
+    justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .projects-grid.spotlight-mode {
+    gap: 20px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card {
+    border-radius: 16px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-window-bar {
+    padding: 8px 12px !important;
+  }
+
+  .projects-grid.spotlight-mode .pw-address-pill {
+    max-width: 140px !important;
+    font-size: 10px !important;
+    padding: 2px 8px !important;
+  }
+
+  .projects-grid.spotlight-mode .pw-badge {
+    font-size: 10px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-image-box {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 215px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-category-tag {
+    bottom: 8px !important;
+    left: 8px !important;
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-date-tag {
+    top: 8px !important;
+    right: 8px !important;
+    font-size: 9.5px !important;
+    padding: 2px 6px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-body {
+    padding: 16px 14px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-title {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+
+  .projects-grid.spotlight-mode .project-subtitle {
+    font-size: 12px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-description {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-tech-stack {
+    gap: 5px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .projects-grid.spotlight-mode .tech-tag {
+    font-size: 10px !important;
+    padding: 3px 7px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card-footer {
+    gap: 8px !important;
+    padding-top: 12px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card-footer .btn {
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+    min-height: 36px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .projects-grid.spotlight-mode .project-image-box {
+    height: 175px !important;
+    min-height: 175px !important;
+  }
+
+  .projects-grid.spotlight-mode .pw-address-pill {
+    max-width: 110px !important;
+    font-size: 9px !important;
+  }
+
+  .projects-grid.spotlight-mode .pw-badge {
+    font-size: 9px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-title {
+    font-size: 15.5px !important;
+  }
+
+  .projects-grid.spotlight-mode .project-card-footer .btn {
+    padding: 7px 4px !important;
+    font-size: 11px !important;
+  }
 }
 
 /* Browser Window Header Mockup */
@@ -5530,6 +5709,18 @@ html, body {
   }
 
   /* DISTINCT PROJECTS UI ON MOBILE */
+  .project-controls-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .project-view-switcher {
+    align-self: center;
+    margin-left: 0;
+  }
+
   .project-filter-bar {
     width: 100%;
     justify-content: flex-start;
@@ -5539,7 +5730,7 @@ html, body {
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
     border-radius: var(--radius-lg);
-    margin-bottom: 22px;
+    margin-bottom: 8px;
   }
 
   .filter-btn {
